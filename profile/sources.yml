@@ -14,6 +14,9 @@
 # - Sistema web auditado por encargo (0 commits propios): el codigo es de un tercero;
 #   lo propio es el trabajo de auditoria, registrado como auditoria-web-2026.
 # - ngix-bu: carpeta de archivos sin historial de version, sin material atribuible.
+# - leccionario_inspeccion (88 / 88 commits propios): excluida por decision de Joseph
+#   el 2026-09-17. No es participacion marginal: la autoria es exclusiva. Se retira
+#   porque Joseph no la considera representativa de lo que quiere mostrar.
 
 - id: WebPortfolioWarmyMunay
   ruta_local: /home/joeman/Documents/proyects/WebPortfolioWarmyMunay
@@ -78,13 +81,6 @@
   url: https://github.com/JosephBano/fake_reports
   descripcion: Generador de datos simulados y reportes biométricos de prueba. Remoto personal.
 
-- id: leccionario_inspeccion
-  ruta_local: /home/joeman/Documents/istpet-dev/escuela_conduccion_profesional/leccionario_inspeccion
-  confidencialidad: publico
-  permite_extraer: true
-  enlazable: true
-  url: https://github.com/JosephBano/leccionario_inspeccion
-  descripcion: Sistema de inspección y leccionario digital para escuela de conducción. Autoría exclusiva (88/88 commits).
 
 - id: titulacion_istpet
   ruta_local: /home/joeman/Documents/istpet-dev/digitalizacion-istpet/titulacion_istpet
