@@ -1,0 +1,23 @@
+# Archivos y directorios privados (D-03, RF-SEG-001)
+privado/
+.secrets
+.secrets.*
+!.secrets.example
+
+# Documentos generados y binarios
+*.docx
+*.pdf
+!templates/**/*.docx
+!templates/**/*.pdf
+
+# Python y temporales
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+*.swp
+*.swo
+*~
+.DS_Store
