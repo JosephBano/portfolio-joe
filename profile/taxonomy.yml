@@ -1,0 +1,294 @@
+# Vocabulario canónico de etiquetas y alias — portfolio-joe (ADR-002, PD-07)
+# Regla: toda etiqueta utilizada en profile/ (experience.yml, projects.yml, skills.yml)
+# DEBE existir como clave canónica en este archivo.
+
+version: "1.0"
+
+tags:
+  # Backend
+  csharp:
+    category: backend
+    aliases:
+      - "c#"
+      - "csharp"
+      - "dotnet"
+      - ".net"
+      - ".net core"
+      - "asp.net"
+      - "asp.net core"
+      - "asp.net mvc"
+      - ".net 10"
+      - ".net 9"
+      - ".net 8"
+  python:
+    category: backend
+    aliases:
+      - "python"
+      - "python3"
+  flask:
+    category: backend
+    aliases:
+      - "flask"
+  django:
+    category: backend
+    aliases:
+      - "django"
+  entity-framework:
+    category: backend
+    aliases:
+      - "entity framework"
+      - "ef"
+      - "ef core"
+      - "entity framework core"
+  alembic:
+    category: backend
+    aliases:
+      - "alembic"
+  questpdf:
+    category: backend
+    aliases:
+      - "questpdf"
+  rest-api:
+    category: backend
+    aliases:
+      - "rest api"
+      - "rest apis"
+      - "api rest"
+      - "apis rest"
+      - "rest"
+      - "restful"
+
+  # Frontend
+  angular:
+    category: frontend
+    aliases:
+      - "angular"
+      - "angularjs"
+      - "angular 17"
+      - "angular 18"
+      - "angular 19"
+  typescript:
+    category: frontend
+    aliases:
+      - "typescript"
+      - "ts"
+  javascript:
+    category: frontend
+    aliases:
+      - "javascript"
+      - "js"
+  react-native:
+    category: frontend
+    aliases:
+      - "react native"
+      - "react-native"
+  tailwind:
+    category: frontend
+    aliases:
+      - "tailwind"
+      - "tailwind css"
+      - "tailwindcss"
+  bootstrap:
+    category: frontend
+    aliases:
+      - "bootstrap"
+      - "bootstrap 5"
+  scss:
+    category: frontend
+    aliases:
+      - "scss"
+      - "sass"
+  html:
+    category: frontend
+    aliases:
+      - "html"
+      - "html5"
+  css:
+    category: frontend
+    aliases:
+      - "css"
+      - "css3"
+  ajax:
+    category: frontend
+    aliases:
+      - "ajax"
+
+  # Bases de datos
+  postgresql:
+    category: database
+    aliases:
+      - "postgres"
+      - "postgresql"
+      - "psql"
+  mysql:
+    category: database
+    aliases:
+      - "mysql"
+  mariadb:
+    category: database
+    aliases:
+      - "mariadb"
+  mongodb:
+    category: database
+    aliases:
+      - "mongodb"
+      - "mongo"
+  redis:
+    category: database
+    aliases:
+      - "redis"
+
+  # DevOps, Cloud e Infraestructura
+  docker:
+    category: devops
+    aliases:
+      - "docker"
+      - "docker compose"
+      - "docker-compose"
+  kubernetes:
+    category: devops
+    aliases:
+      - "k8s"
+      - "kubernetes"
+  git:
+    category: devops
+    aliases:
+      - "git"
+  gitlab:
+    category: devops
+    aliases:
+      - "gitlab"
+      - "gitlab ci"
+  github:
+    category: devops
+    aliases:
+      - "github"
+      - "github actions"
+  ci-cd:
+    category: devops
+    aliases:
+      - "ci/cd"
+      - "cicd"
+      - "continuous integration"
+  azure:
+    category: devops
+    aliases:
+      - "azure"
+      - "microsoft azure"
+  aws:
+    category: devops
+    aliases:
+      - "aws"
+      - "amazon web services"
+  linux:
+    category: devops
+    aliases:
+      - "linux"
+      - "ubuntu"
+      - "debian"
+  windows-server:
+    category: devops
+    aliases:
+      - "windows server"
+      - "windows-server"
+
+  # Arquitectura, Seguridad y Metodologías
+  jwt:
+    category: security
+    aliases:
+      - "jwt"
+      - "json web token"
+      - "tokens jwt"
+  rbac:
+    category: security
+    aliases:
+      - "rbac"
+      - "role based access control"
+      - "control de acceso por roles"
+  multi-tenant:
+    category: architecture
+    aliases:
+      - "multi-tenant"
+      - "multitenant"
+      - "multi tenant"
+  microservices:
+    category: architecture
+    aliases:
+      - "microservices"
+      - "microservicios"
+  clean-architecture:
+    category: architecture
+    aliases:
+      - "clean architecture"
+      - "arquitectura limpia"
+  scrum:
+    category: methodology
+    aliases:
+      - "scrum"
+      - "metodologia scrum"
+  kanban:
+    category: methodology
+    aliases:
+      - "kanban"
+  agile:
+    category: methodology
+    aliases:
+      - "agile"
+      - "metodologias agiles"
+      - "agil"
+
+  # Datos e Inteligencia Artificial
+  pandas:
+    category: data
+    aliases:
+      - "pandas"
+  numpy:
+    category: data
+    aliases:
+      - "numpy"
+  deepseek-api:
+    category: ai
+    aliases:
+      - "deepseek"
+      - "deepseek api"
+      - "ia"
+      - "ai"
+      - "llm"
+
+  # Ciberseguridad y Redes
+  cybersecurity:
+    category: security
+    aliases:
+      - "ciberseguridad"
+      - "cybersecurity"
+      - "ethical hacking"
+      - "ethical hacker"
+  networking:
+    category: networking
+    aliases:
+      - "networking"
+      - "redes"
+      - "ccna"
+      - "ccnav7"
+
+  # Herramientas
+  n8n:
+    category: tools
+    aliases:
+      - "n8n"
+  trello:
+    category: tools
+    aliases:
+      - "trello"
+  clickup:
+    category: tools
+    aliases:
+      - "clickup"
+  notion:
+    category: tools
+    aliases:
+      - "notion"
+  slack:
+    category: tools
+    aliases:
+      - "slack"
