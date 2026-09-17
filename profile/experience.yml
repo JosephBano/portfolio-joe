@@ -99,3 +99,62 @@
       evidence:
         - "Bienestar_Institucional"
         - "gestion_academica_istpet"
+
+    - id: "exp-istpet-007"
+      tags:
+        - "testing"
+        - "csharp"
+        - "entity-framework"
+      weight: 5
+      es: "Construyó la suite de pruebas automatizadas de un sistema institucional de bienestar estudiantil: 298 pruebas unitarias y de integración con MSTest, Moq y FluentAssertions sobre un contexto Entity Framework Core en memoria."
+      en: "Built the automated test suite for an institutional student welfare system: 298 unit and integration tests using MSTest, Moq and FluentAssertions over an in-memory Entity Framework Core context."
+      evidence:
+        - "Bienestar_Institucional"
+
+    - id: "exp-istpet-008"
+      tags:
+        - "csharp"
+        - "clean-architecture"
+        - "rest-api"
+        - "mysql"
+        - "entity-framework"
+        - "jwt"
+      weight: 5
+      es: "Diseñó y construyó una API REST en .NET 8 con separación en capas de dominio, aplicación e infraestructura: 27 controladores, 83 tipos de dominio y 6 middlewares propios, sobre MySQL con Entity Framework Core y autenticación JWT."
+      en: "Designed and built a .NET 8 REST API with domain, application and infrastructure layer separation: 27 controllers, 83 domain types and 6 custom middlewares, backed by MySQL with Entity Framework Core and JWT authentication."
+      evidence:
+        - "Bienestar_Institucional"
+
+    - id: "exp-istpet-009"
+      tags:
+        - "angular"
+        - "angular-material"
+        - "typescript"
+      weight: 4
+      es: "Desarrolló la aplicación de página única en Angular 21 con Angular Material: 57 componentes, 18 servicios y 5 guards e interceptores para control de acceso y gestión de sesión."
+      en: "Developed the Angular 21 single-page application with Angular Material: 57 components, 18 services, and 5 guards and interceptors for access control and session management."
+      evidence:
+        - "Bienestar_Institucional"
+
+    - id: "exp-istpet-010"
+      tags:
+        - "csharp"
+        - "swagger"
+        - "mailkit"
+        - "bcrypt"
+      weight: 3
+      es: "Implementó la emisión automática de documentos ofimáticos en servidor y cliente (Word y PDF), las notificaciones por correo del sistema y el almacenamiento de credenciales con hashing BCrypt, con la API documentada mediante OpenAPI."
+      en: "Implemented automated office document generation on server and client (Word and PDF), the system's email notifications, and credential storage with BCrypt hashing, with the API documented through OpenAPI."
+      evidence:
+        - "Bienestar_Institucional"
+
+    - id: "exp-istpet-011"
+      tags:
+        - "agile"
+        - "csharp"
+        - "angular"
+      weight: 4
+      es: "Cubrió el ciclo completo de un producto institucional durante cinco meses: levantamiento de requisitos en especificaciones y wireframes, backend, frontend y pruebas, con 224 contribuciones al repositorio."
+      en: "Covered the full lifecycle of an institutional product over five months: requirements gathering through specifications and wireframes, backend, frontend and testing, with 224 contributions to the repository."
+      evidence:
+        - "Bienestar_Institucional"

@@ -259,7 +259,7 @@
 
 - name: "microservices"
   category: "architecture"
-  level: "intermedio"
+  level: "basico"
   aliases:
     - "Microservices"
     - "Microservicios"
@@ -354,3 +354,47 @@
     - "Redes"
     - "Networking"
     - "CCNA"
+
+- name: "testing"
+  category: "quality"
+  level: "avanzado"
+  aliases:
+    - "Pruebas unitarias"
+    - "Unit Testing"
+    - "Pruebas automatizadas"
+    - "Automated Testing"
+    - "MSTest"
+    - "Moq"
+    - "FluentAssertions"
+
+- name: "angular-material"
+  category: "frontend"
+  level: "avanzado"
+  aliases:
+    - "Angular Material"
+    - "Material Design"
+    - "Angular CDK"
+
+- name: "swagger"
+  category: "backend"
+  level: "intermedio"
+  aliases:
+    - "Swagger"
+    - "OpenAPI"
+    - "Swashbuckle"
+
+- name: "mailkit"
+  category: "backend"
+  level: "intermedio"
+  aliases:
+    - "MailKit"
+    - "SMTP"
+    - "Notificaciones por correo"
+
+- name: "bcrypt"
+  category: "security"
+  level: "intermedio"
+  aliases:
+    - "BCrypt"
+    - "Password Hashing"
+    - "Hashing de contraseñas"
