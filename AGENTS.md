@@ -115,7 +115,15 @@ Para garantizar que dos generaciones consecutivas con la misma entrada produzcan
    - 1.º Relevancia (`relevancia` descendente).
    - 2.º Peso asignado (`weight` descendente, 5 a 1).
    - 3.º Desempate lexicográfico por identificador (`id` ascendente alfabético).
-3. **Cupos por sección:**
+3. **Ordenación de la sección de proyectos:** el orden **se calcula por oferta**, no es el del archivo.
+   - 1.º Relevancia del proyecto (suma de intersecciones de sus viñetas con las palabras clave), descendente.
+   - 2.º Suma de `weight` de sus viñetas, descendente.
+   - 3.º Desempate lexicográfico por `id` ascendente.
+   - Un proyecto con relevancia 0 **no se incluye**.
+   Así, una vacante frontend antepone el proyecto con más peso frontend y una
+   de arquitectura antepone el suyo, sin reordenar `projects.yml`. El orden del
+   archivo es solo el de almacenamiento y no influye en el resultado.
+4. **Cupos por sección:**
    - En plantilla `ats-standard`: seleccionar entre 4 y 6 viñetas para puestos principales, y entre 2 y 3 viñetas por proyecto relevante.
    - En plantilla `ats-compact`: seleccionar máximo 3 viñetas por puesto y 2 por proyecto.
 
