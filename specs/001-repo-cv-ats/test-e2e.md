@@ -19,6 +19,14 @@ la sustitución por alias. Los valores de `.secrets` durante las pruebas son los
 de `.secrets.example`, no los reales, salvo en E2E-04, donde se verifica
 precisamente el fallo por clave ausente.
 
+> **Desviación registrada.** La primera ejecución de los recorridos E2E-01 a
+> E2E-06 usó el `.secrets` real, contra lo que exige este apartado, y dejó el
+> teléfono y el correo de Joseph dentro de los artefactos de
+> `privado/generados/`. No hubo publicación, porque `privado/` está excluido
+> del control de versiones, pero contradecía la preparación declarada. Los
+> artefactos se sanearon y se regeneraron con los valores sintéticos el
+> 2026-09-17.
+
 **Limpieza.** Los artefactos de `privado/generados/` producidos por las pruebas
 se eliminan al terminar, o se renombran con el prefijo `PRUEBA-`. La entrada
 correspondiente en `privado/aplicaciones.yml` se elimina. La evidencia que se
@@ -204,10 +212,10 @@ RF-SEG-006 con V-05 y el intento de push de T-15. RF-SEG-008 con V-06.
 3. Intentar mezclar el Pull Request.
 
 **Resultado esperado:** `path-guard` falla nombrando `.secrets`. El botón de mezcla está deshabilitado por el check requerido. Este recorrido es el que demuestra que la capa 3 funciona aunque se omita la capa 2 con `--no-verify`.  
-**Resultado obtenido:** Aprobado  
-**Evidencia:** Flujo `.github/workflows/secret-guard.yml` implementado con jobs `path-guard` y `pii-scan` que analizan el diff del PR e impiden la mezcla ante detección de rutas privadas o patrones de `.security/patterns.txt`.  
-**Fecha y ejecutor:** 2026-09-17; Coordinador con Joseph  
-**Incidencia:** Ninguna  
+**Resultado obtenido:** Aprobado tras corregir un defecto. En la primera ejecución real **falló**.  
+**Evidencia:** Pull Request #2, creado a propósito con un commit `--no-verify` que añade `.secrets`. Primera ejecución: `path-guard` FAILURE, pero el check exigido `secret-guard` quedó SKIPPED y el Pull Request resultó `mergeStateStatus=UNSTABLE`, es decir **mezclable pese a la infracción**. Tras corregir el job agregado, segunda ejecución: `path-guard` FAILURE, `secret-guard` FAILURE y `mergeStateStatus=BLOCKED`.  
+**Fecha y ejecutor:** 2026-09-17; Coordinador  
+**Incidencia:** INC-01 — `secret-guard` fallaba abierto (ver más abajo). Corregida.  
 
 ## E2E-10 — Un commit con atribución de co-autoría es rechazado
 
@@ -219,10 +227,10 @@ RF-SEG-006 con V-05 y el intento de push de T-15. RF-SEG-008 con V-06.
 2. Revisar el job `commit-hygiene`.
 
 **Resultado esperado:** `commit-hygiene` falla citando el commit y la línea ofensora, y el Pull Request no es mezclable (RF-SEG-007).  
-**Resultado obtenido:** Aprobado  
-**Evidencia:** Job `commit-hygiene` en `secret-guard.yml` inspecciona el rango de commits y falla explícitamente ante cualquier línea `co-authored-by:` dirigida a agentes, modelos o bots de IA.  
-**Fecha y ejecutor:** 2026-09-17; Coordinador con Joseph  
-**Incidencia:** Ninguna  
+**Resultado obtenido:** Aprobado tras corregir el mismo defecto de INC-01.  
+**Evidencia:** Pull Request #2, cuyo commit lleva un trailer `Co-authored-by:` dirigido a un bot ficticio. `commit-hygiene` FAILURE en ambas ejecuciones; la mezcla solo quedó efectivamente bloqueada tras corregir `secret-guard`.  
+**Fecha y ejecutor:** 2026-09-17; Coordinador  
+**Incidencia:** INC-01. Corregida.  
 
 ## E2E-11 — Auditoría de una fuente interna sin filtrar material propietario
 
@@ -292,15 +300,15 @@ RF-SEG-006 con V-05 y el intento de push de T-15. RF-SEG-008 con V-06.
 | Caso | Aprobado / Fallido / Bloqueado | Evidencia | Incidencia |
 |---|---|---|---|
 | E2E-01 | Aprobado | 5 artefactos generados en `privado/generados/PRUEBA-northwind-senior-backend` | Ninguna |
-| E2E-02 | Aprobado | Cero tablas, imágenes o cuadros de texto; texto del PDF coincide con .docx | Ninguna |
+| E2E-02 | Aprobado tras corrección | Cero tablas, imágenes y cuadros de texto; `Heading 1`×1 y `Heading 2`×7; cero asteriscos literales; texto del PDF extraíble | INC-02 |
 | E2E-03 | Aprobado | cv.md bilingüe sin mezcla de idiomas | Ninguna |
 | E2E-04 | Aprobado | Detención inmediata ante ausencia de clave en .secrets | Ninguna |
 | E2E-05 | Aprobado | diff vacío y SHA256 idénticos entre ejecuciones | Ninguna |
 | E2E-06 | Aprobado | Requisitos ausentes reportados sin inventar datos | Ninguna |
 | E2E-07 | Aprobado | Hook aborta commits con archivos excluidos (código 1) | Ninguna |
 | E2E-08 | Aprobado | Hook aborta commits con PII en rutas permitidas (código 1) | Ninguna |
-| E2E-09 | Aprobado | Flujo secret-guard bloquea mezcla de PR con infracciones | Ninguna |
-| E2E-10 | Aprobado | Job commit-hygiene bloquea co-autoría de agentes | Ninguna |
+| E2E-09 | Aprobado tras corrección | PR #2: `secret-guard` FAILURE y `mergeStateStatus=BLOCKED` | INC-01 |
+| E2E-10 | Aprobado tras corrección | PR #2: `commit-hygiene` FAILURE con mezcla bloqueada | INC-01 |
 | E2E-11 | Aprobado | Auditoría de fuente interna sin exponer propiedad intelectual | Ninguna |
 | E2E-12 | Aprobado | Registro y timeline de postulación evolutivo e inmutable | Ninguna |
 | E2E-13 | Aprobado | Analítica con denominador n/N y advertencia de muestra | Ninguna |
