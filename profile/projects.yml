@@ -1,5 +1,6 @@
 # profile/projects.yml — Proyectos destacados (RF-DATOS-003, RF-EVID-005, RF-EVID-006)
-# Solo los proyectos con evidencia de una fuente 'publico' llevan url enlazable.
+# El orden de este archivo NO determina el del documento: se calcula por oferta (AGENTS.md §4.3).
+# Solo los proyectos con evidencia de una fuente 'publico' y enlazable llevan url.
 
 - id: hato-erp
   name: HATO — ERP de gestión ganadera
@@ -135,3 +136,85 @@
       role-based access control.
     evidence:
     - gestion_academica_istpet
+- id: portafolio-warmymunay
+  name: Portafolio web WarmyMunay
+  description:
+    es: Sitio web personal en Angular con renderizado del lado del servidor, optimización de recursos
+      y verificación automatizada de accesibilidad, desplegado en producción.
+    en: Personal website in Angular with server-side rendering, asset optimization and automated accessibility
+      checks, deployed to production.
+  url: https://github.com/JosephBano/WebPortfolioWarmyMunay
+  evidence:
+  - WebPortfolioWarmyMunay
+  bullets:
+  - id: proj-warmy-001
+    tags:
+    - angular
+    - angular-ssr
+    - typescript
+    - tailwind
+    - responsive-design
+    weight: 5
+    es: Desarrolló por completo un sitio en Angular 19 con renderizado del lado del servidor y Tailwind
+      CSS 4, desplegado en producción con redirecciones para aplicación de página única.
+    en: Solely developed an Angular 19 site with server-side rendering and Tailwind CSS 4, deployed to
+      production with single-page application redirects.
+  - id: proj-warmy-002
+    tags:
+    - optimizacion-web
+    - seo
+    weight: 4
+    es: 'Implementó la cadena de optimización de recursos: conversión automatizada de imágenes a WebP
+      y AVIF, compresión y generación de sitemap para indexación en buscadores.'
+    en: 'Implemented the asset optimization pipeline: automated image conversion to WebP and AVIF, compression,
+      and sitemap generation for search engine indexing.'
+  - id: proj-warmy-003
+    tags:
+    - accesibilidad
+    - testing
+    - ci-cd
+    weight: 4
+    es: Incorporó verificación automatizada de accesibilidad y una suite de pruebas ejecutada en integración
+      continua antes de cada despliegue.
+    en: Added automated accessibility verification and a test suite executed in continuous integration
+      before each deployment.
+- id: auditoria-seguridad-web
+  name: Auditoría de seguridad de aplicación web
+  description:
+    es: Auditoría de seguridad autorizada sobre una aplicación web, con alcance firmado, laboratorio aislado
+      y control documentado del perímetro de pruebas.
+    en: Authorized security audit of a web application, with signed scope, isolated lab environment and
+      documented control of the testing perimeter.
+  url: null
+  evidence:
+  - auditoria-web-2026
+  bullets:
+  - id: proj-audit-001
+    tags:
+    - pentesting
+    - cybersecurity
+    - docker
+    weight: 5
+    es: Ejecutó una auditoría de seguridad autorizada sobre una aplicación web, con carta de autorización
+      y alcance firmado, laboratorio aislado en contenedores y control documentado de presupuesto y perímetro
+      de pruebas.
+    en: Conducted an authorized security audit of a web application, with signed authorization letter
+      and scope, a containerized isolated lab, and documented control of testing budget and perimeter.
+  - id: proj-audit-002
+    tags:
+    - pentesting
+    - python
+    - testing
+    weight: 4
+    es: Desarrolló una batería de pruebas automatizadas en Python para verificar los límites de alcance,
+      el ciclo de vida de sesión y el handshake WebSocket antes de cada sesión de pruebas.
+    en: Built an automated Python test suite to verify scope boundaries, session lifecycle and WebSocket
+      handshake before each testing session.
+  - id: proj-audit-003
+    tags:
+    - pentesting
+    - cybersecurity
+    weight: 4
+    es: Entregó informe de auditoría con plan de remediación priorizado y revisión independiente de los
+      resultados.
+    en: Delivered an audit report with a prioritized remediation plan and independent review of the findings.

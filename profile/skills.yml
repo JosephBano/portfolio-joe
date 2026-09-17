@@ -467,3 +467,50 @@
     - "CodeQL"
     - "SAST"
     - "Análisis estático de seguridad"
+
+- name: "angular-ssr"
+  category: "frontend"
+  level: "intermedio"
+  aliases:
+    - "Angular SSR"
+    - "Angular Universal"
+    - "Server Side Rendering"
+
+- name: "seo"
+  category: "frontend"
+  level: "intermedio"
+  aliases:
+    - "SEO"
+    - "Posicionamiento web"
+
+- name: "accesibilidad"
+  category: "frontend"
+  level: "intermedio"
+  aliases:
+    - "Accesibilidad"
+    - "Accessibility"
+    - "WCAG"
+    - "a11y"
+
+- name: "optimizacion-web"
+  category: "frontend"
+  level: "intermedio"
+  aliases:
+    - "Optimización web"
+    - "Web Performance"
+    - "Core Web Vitals"
+
+- name: "netlify"
+  category: "devops"
+  level: "intermedio"
+  aliases:
+    - "Netlify"
+
+- name: "pentesting"
+  category: "security"
+  level: "intermedio"
+  aliases:
+    - "Auditoría de seguridad"
+    - "Security Audit"
+    - "Penetration Testing"
+    - "Ethical Hacking"

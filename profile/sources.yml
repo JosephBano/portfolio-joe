@@ -4,9 +4,58 @@
 # - 'interno': Sustenta experiencia profesional bajo el puesto en el ISTPET.
 #              Queda PROHIBIDO nombrar o enlazar el repositorio en documentos públicos generados.
 #
+# - 'confidencial': Encargo con cliente. Ni ruta ni nombre figuran aquí, porque este
+#                   archivo es público; viven en privado/fuentes-confidenciales.yml.
+#                   Solo salen de ella metodo y tipo de entregable.
+#
 # Fuentes deliberadamente excluidas (participación marginal):
 # - Mi_ISTPET (1 / 306 commits): Colaboración puntual no representativa.
 # - gestion_recursos_humanos_istpet (1 / 223 commits): Colaboración puntual no representativa.
+# - Sistema web auditado por encargo (0 commits propios): el codigo es de un tercero;
+#   lo propio es el trabajo de auditoria, registrado como auditoria-web-2026.
+# - ngix-bu: carpeta de archivos sin historial de version, sin material atribuible.
+
+- id: WebPortfolioWarmyMunay
+  ruta_local: /home/joeman/Documents/proyects/WebPortfolioWarmyMunay
+  confidencialidad: publico
+  permite_extraer: true
+  enlazable: true
+  url: https://github.com/JosephBano/WebPortfolioWarmyMunay
+  nota: >-
+    Proyecto personal, 80 de 80 commits propios entre noviembre de 2025 y julio
+    de 2026. Angular 19 con renderizado del lado del servidor, desplegado.
+
+- id: sigil
+  ruta_local: /home/joeman/Documents/proyects/sigil
+  confidencialidad: publico
+  permite_extraer: true
+  enlazable: true
+  url: https://github.com/JosephBano/sigil
+  nota: >-
+    Proyecto personal en fase inicial: documentacion de arquitectura completa
+    pero apenas cuatro archivos de codigo. Registrado como fuente; no sustenta
+    vinetas todavia.
+
+- id: home-server
+  ruta_local: /home/joeman/Documents/proyects/home-server
+  confidencialidad: publico
+  permite_extraer: true
+  enlazable: false
+  nota: >-
+    Laboratorio domestico propio, sin remoto publicado. Cuatro commits de
+    septiembre de 2026. Registrado como fuente; no sustenta vinetas todavia.
+
+- id: auditoria-web-2026
+  ruta_local: null
+  confidencialidad: confidencial
+  permite_extraer: metodologia
+  enlazable: false
+  nota: >-
+    Encargo de auditoria de seguridad con autorizacion firmada. La ruta, el
+    cliente y el dominio NO figuran en este archivo porque es publico: viven en
+    privado/fuentes-confidenciales.yml. De esta fuente solo salen metodo y tipo
+    de entregable. Queda PROHIBIDO citar cliente, dominio, hallazgo,
+    vulnerabilidad o cualquier evidencia en documentos generados.
 
 - id: erp-hacienda
   ruta_local: /home/joeman/Documents/proyects/erp-hacienda

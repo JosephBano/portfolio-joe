@@ -78,8 +78,11 @@ def main():
             conf = src["confidencialidad"]
             if conf not in ["publico", "interno", "confidencial"]:
                 fail(f"Fuente {src['id']}: confidencialidad inválida '{conf}'. Debe ser publico, interno o confidencial.")
-            if conf == "publico" and not src["enlazable"]:
-                fail(f"Fuente {src['id']} es publica pero enlazable es false. Las fuentes publicas deben ser enlazables.")
+            # RF-EVID-006 es una implicación en un solo sentido: solo una fuente
+            # publica PUEDE enlazarse. No obliga a que toda publica lo sea: un
+            # repositorio personal sin remoto es obra propia y no es enlazable.
+            if src["enlazable"] and not src.get("url"):
+                fail(f"Fuente {src['id']} declara enlazable true pero no tiene 'url'. Una fuente enlazable necesita la direccion a la que enlazar.")
             if conf != "publico" and src["enlazable"]:
                 fail(f"Fuente {src['id']} es {conf} pero enlazable es true (RF-EVID-006: solo fuentes publicas pueden ser enlazables).")
             known_sources[src["id"]] = src
