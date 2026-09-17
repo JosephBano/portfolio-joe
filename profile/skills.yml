@@ -105,7 +105,7 @@
 
 - name: "react-native"
   category: "frontend"
-  level: "intermedio"
+  level: "avanzado"
   aliases:
     - "React Native"
 
@@ -421,3 +421,49 @@
     - "Diseño responsivo"
     - "Responsive Design"
     - "Mobile Responsiveness"
+
+- name: "xunit"
+  category: "quality"
+  level: "avanzado"
+  aliases:
+    - "xUnit"
+    - "xUnit.net"
+
+- name: "testcontainers"
+  category: "quality"
+  level: "intermedio"
+  aliases:
+    - "Testcontainers"
+    - "Integration Testing"
+
+- name: "event-driven"
+  category: "architecture"
+  level: "intermedio"
+  aliases:
+    - "Arquitectura orientada a eventos"
+    - "Event-Driven Architecture"
+    - "Event Sourcing"
+
+- name: "modular-monolith"
+  category: "architecture"
+  level: "avanzado"
+  aliases:
+    - "Monolito modular"
+    - "Modular Monolith"
+
+- name: "offline-first"
+  category: "frontend"
+  level: "intermedio"
+  aliases:
+    - "Offline-First"
+    - "Sincronización offline"
+    - "WatermelonDB"
+    - "Expo"
+
+- name: "codeql"
+  category: "security"
+  level: "basico"
+  aliases:
+    - "CodeQL"
+    - "SAST"
+    - "Análisis estático de seguridad"

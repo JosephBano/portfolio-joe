@@ -8,6 +8,19 @@
 # - Mi_ISTPET (1 / 306 commits): Colaboración puntual no representativa.
 # - gestion_recursos_humanos_istpet (1 / 223 commits): Colaboración puntual no representativa.
 
+- id: erp-hacienda
+  ruta_local: /home/joeman/Documents/proyects/erp-hacienda
+  confidencialidad: publico
+  permite_extraer: true
+  enlazable: true
+  url: https://github.com/JosephBano/erp-hacienda
+  nota: >-
+    Proyecto personal. Repositorio publico bajo la cuenta de Joseph, por lo que
+    es enlazable y presentable como obra propia (D-11). Parte del codigo fue
+    escrito por agentes de IA bajo su direccion; las vinetas se redactan con
+    verbos de diseno y direccion, y las cifras que citan son de escala del
+    sistema, nunca de aportacion personal.
+
 - id: fake_reports
   ruta_local: /home/joeman/Documents/istpet-dev/biometrico/fake_reports
   confidencialidad: publico

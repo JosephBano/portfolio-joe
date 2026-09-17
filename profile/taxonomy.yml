@@ -391,3 +391,51 @@ tags:
       - "diseño responsive"
       - "diseno responsive"
       - "responsive"
+
+  # Calidad y pruebas
+  xunit:
+    category: quality
+    aliases:
+      - "xunit"
+      - "xunit.net"
+  testcontainers:
+    category: quality
+    aliases:
+      - "testcontainers"
+      - "pruebas de integracion con contenedores"
+      - "integration testing"
+
+  # Arquitectura
+  event-driven:
+    category: architecture
+    aliases:
+      - "event driven"
+      - "arquitectura orientada a eventos"
+      - "event sourcing"
+      - "eventos inmutables"
+  modular-monolith:
+    category: architecture
+    aliases:
+      - "modular monolith"
+      - "monolito modular"
+      - "arquitectura modular"
+
+  # Frontend
+  offline-first:
+    category: frontend
+    aliases:
+      - "offline first"
+      - "offline-first"
+      - "sincronizacion offline"
+      - "offline sync"
+      - "watermelondb"
+      - "expo"
+
+  # Seguridad
+  codeql:
+    category: security
+    aliases:
+      - "codeql"
+      - "sast"
+      - "analisis estatico de seguridad"
+      - "static analysis"
