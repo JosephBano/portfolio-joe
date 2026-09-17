@@ -158,3 +158,9 @@ Registro cronológico y evolutivo de postulaciones (RF-TRACK-001, RF-TRACK-002, 
     - `evento` *(string)*
   - `feedback` *(string, opcional)*: Retroalimentación cualitativa recibida.
   - `motivo_rechazo` *(string, opcional)*: Causa reportada del descarte.
+
+### `oferta.yml` — campo opcional `ubicacion_declarada`
+
+| Campo | Tipo | Obligatorio | Descripción |
+|---|---|---|---|
+| `ubicacion_declarada` | cadena | No | Ciudad y país que se escriben en la cabecera del documento en lugar de la residencia real, cuando la oferta es presencial o híbrida en otra ciudad donde Joseph puede residir. Solo se usa si la residencia es real y verificable. Ausente = se usa `{{secrets.ciudad}}, {{secrets.pais}}`. |

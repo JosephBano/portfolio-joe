@@ -131,6 +131,30 @@ Para garantizar que dos generaciones consecutivas con la misma entrada produzcan
 
 ## 6. Variables personales (§Variables, RF-GEN-002)
 
+### Ubicación declarada por oferta (§Ubicación)
+
+`{{secrets.ciudad}}` y `{{secrets.pais}}` son la residencia real de Joseph y
+**nunca se alteran en `.secrets`**. Cuando una oferta es presencial o híbrida en
+otra ciudad donde Joseph puede residir de verdad, la oferta declara:
+
+```yaml
+ubicacion_declarada: "Ambato, Ecuador"
+```
+
+El generador usa ese valor en la cabecera del documento **en lugar de**
+`{{secrets.ciudad}}, {{secrets.pais}}`, sin tocar `.secrets` ni `profile/`.
+
+**Condición inviolable:** solo se declara una ciudad en la que Joseph pueda
+residir realmente —vivienda propia, familiar o mudanza ya decidida—. Declarar
+una ciudad para pasar un filtro geográfico y no poder presentarse es una
+afirmación falsa, y cae bajo la misma prohibición que inventar experiencia
+(RF-GEN-008). Ante la duda, el agente pregunta.
+
+Si el campo no existe, se usa la residencia real. El valor queda registrado en
+`oferta.yml`, de modo que cada documento generado deja constancia de qué ciudad
+declaró y por qué.
+
+
 - Todos los datos de contacto y residencia residen exclusivamente en `privado/.secrets`.
 - Al componer `cv.md`, el agente debe reemplazar cada marcador `{{secrets.<clave>}}` por su valor exacto cargado desde `privado/.secrets`.
 - **Condición de detención:** Si el archivo `privado/.secrets` no existe, o si una clave referenciada (ej. `{{secrets.telefono}}`) no está definida en él, la generación se **detiene inmediatamente** reportando la clave faltante.
