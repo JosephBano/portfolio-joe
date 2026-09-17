@@ -105,7 +105,7 @@
 
 - name: "react-native"
   category: "frontend"
-  level: "intermedio"
+  level: "avanzado"
   aliases:
     - "React Native"
 
@@ -398,3 +398,119 @@
     - "BCrypt"
     - "Password Hashing"
     - "Hashing de contraseñas"
+
+- name: "relational-databases"
+  category: "database"
+  level: "avanzado"
+  aliases:
+    - "Bases de datos relacionales"
+    - "Relational Databases"
+    - "RDBMS"
+    - "SQL"
+
+- name: "php"
+  category: "backend"
+  level: "basico"
+  aliases:
+    - "PHP"
+
+- name: "responsive-design"
+  category: "frontend"
+  level: "avanzado"
+  aliases:
+    - "Diseño responsivo"
+    - "Responsive Design"
+    - "Mobile Responsiveness"
+
+- name: "xunit"
+  category: "quality"
+  level: "avanzado"
+  aliases:
+    - "xUnit"
+    - "xUnit.net"
+
+- name: "testcontainers"
+  category: "quality"
+  level: "intermedio"
+  aliases:
+    - "Testcontainers"
+    - "Integration Testing"
+
+- name: "event-driven"
+  category: "architecture"
+  level: "intermedio"
+  aliases:
+    - "Arquitectura orientada a eventos"
+    - "Event-Driven Architecture"
+    - "Event Sourcing"
+
+- name: "modular-monolith"
+  category: "architecture"
+  level: "avanzado"
+  aliases:
+    - "Monolito modular"
+    - "Modular Monolith"
+
+- name: "offline-first"
+  category: "frontend"
+  level: "intermedio"
+  aliases:
+    - "Offline-First"
+    - "Sincronización offline"
+    - "WatermelonDB"
+    - "Expo"
+
+- name: "codeql"
+  category: "security"
+  level: "basico"
+  aliases:
+    - "CodeQL"
+    - "SAST"
+    - "Análisis estático de seguridad"
+
+- name: "angular-ssr"
+  category: "frontend"
+  level: "intermedio"
+  aliases:
+    - "Angular SSR"
+    - "Angular Universal"
+    - "Server Side Rendering"
+
+- name: "seo"
+  category: "frontend"
+  level: "intermedio"
+  aliases:
+    - "SEO"
+    - "Posicionamiento web"
+
+- name: "accesibilidad"
+  category: "frontend"
+  level: "intermedio"
+  aliases:
+    - "Accesibilidad"
+    - "Accessibility"
+    - "WCAG"
+    - "a11y"
+
+- name: "optimizacion-web"
+  category: "frontend"
+  level: "intermedio"
+  aliases:
+    - "Optimización web"
+    - "Web Performance"
+    - "Core Web Vitals"
+
+- name: "netlify"
+  category: "devops"
+  level: "intermedio"
+  aliases:
+    - "Netlify"
+
+- name: "pentesting"
+  category: "security"
+  level: "intermedio"
+  aliases:
+    - "Auditoría de seguridad"
+    - "Security Audit"
+    - "Penetration Testing"
+    - "Ethical Hacking"

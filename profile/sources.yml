@@ -4,9 +4,74 @@
 # - 'interno': Sustenta experiencia profesional bajo el puesto en el ISTPET.
 #              Queda PROHIBIDO nombrar o enlazar el repositorio en documentos públicos generados.
 #
+# - 'confidencial': Encargo con cliente. Ni ruta ni nombre figuran aquí, porque este
+#                   archivo es público; viven en privado/fuentes-confidenciales.yml.
+#                   Solo salen de ella metodo y tipo de entregable.
+#
 # Fuentes deliberadamente excluidas (participación marginal):
 # - Mi_ISTPET (1 / 306 commits): Colaboración puntual no representativa.
 # - gestion_recursos_humanos_istpet (1 / 223 commits): Colaboración puntual no representativa.
+# - Sistema web auditado por encargo (0 commits propios): el codigo es de un tercero;
+#   lo propio es el trabajo de auditoria, registrado como auditoria-web-2026.
+# - ngix-bu: carpeta de archivos sin historial de version, sin material atribuible.
+# - leccionario_inspeccion (88 / 88 commits propios): excluida por decision de Joseph
+#   el 2026-09-17. No es participacion marginal: la autoria es exclusiva. Se retira
+#   porque Joseph no la considera representativa de lo que quiere mostrar.
+
+- id: WebPortfolioWarmyMunay
+  ruta_local: /home/joeman/Documents/proyects/WebPortfolioWarmyMunay
+  confidencialidad: publico
+  permite_extraer: true
+  enlazable: true
+  url: https://github.com/JosephBano/WebPortfolioWarmyMunay
+  nota: >-
+    Proyecto personal, 80 de 80 commits propios entre noviembre de 2025 y julio
+    de 2026. Angular 19 con renderizado del lado del servidor, desplegado.
+
+- id: sigil
+  ruta_local: /home/joeman/Documents/proyects/sigil
+  confidencialidad: publico
+  permite_extraer: true
+  enlazable: true
+  url: https://github.com/JosephBano/sigil
+  nota: >-
+    Proyecto personal en fase inicial: documentacion de arquitectura completa
+    pero apenas cuatro archivos de codigo. Registrado como fuente; no sustenta
+    vinetas todavia.
+
+- id: home-server
+  ruta_local: /home/joeman/Documents/proyects/home-server
+  confidencialidad: publico
+  permite_extraer: true
+  enlazable: false
+  nota: >-
+    Laboratorio domestico propio, sin remoto publicado. Cuatro commits de
+    septiembre de 2026. Registrado como fuente; no sustenta vinetas todavia.
+
+- id: auditoria-web-2026
+  ruta_local: null
+  confidencialidad: confidencial
+  permite_extraer: metodologia
+  enlazable: false
+  nota: >-
+    Encargo de auditoria de seguridad con autorizacion firmada. La ruta, el
+    cliente y el dominio NO figuran en este archivo porque es publico: viven en
+    privado/fuentes-confidenciales.yml. De esta fuente solo salen metodo y tipo
+    de entregable. Queda PROHIBIDO citar cliente, dominio, hallazgo,
+    vulnerabilidad o cualquier evidencia en documentos generados.
+
+- id: erp-hacienda
+  ruta_local: /home/joeman/Documents/proyects/erp-hacienda
+  confidencialidad: publico
+  permite_extraer: true
+  enlazable: true
+  url: https://github.com/JosephBano/erp-hacienda
+  nota: >-
+    Proyecto personal. Repositorio publico bajo la cuenta de Joseph, por lo que
+    es enlazable y presentable como obra propia (D-11). Parte del codigo fue
+    escrito por agentes de IA bajo su direccion; las vinetas se redactan con
+    verbos de diseno y direccion, y las cifras que citan son de escala del
+    sistema, nunca de aportacion personal.
 
 - id: fake_reports
   ruta_local: /home/joeman/Documents/istpet-dev/biometrico/fake_reports
@@ -16,13 +81,6 @@
   url: https://github.com/JosephBano/fake_reports
   descripcion: Generador de datos simulados y reportes biométricos de prueba. Remoto personal.
 
-- id: leccionario_inspeccion
-  ruta_local: /home/joeman/Documents/istpet-dev/escuela_conduccion_profesional/leccionario_inspeccion
-  confidencialidad: publico
-  permite_extraer: true
-  enlazable: true
-  url: https://github.com/JosephBano/leccionario_inspeccion
-  descripcion: Sistema de inspección y leccionario digital para escuela de conducción. Autoría exclusiva (88/88 commits).
 
 - id: titulacion_istpet
   ruta_local: /home/joeman/Documents/istpet-dev/digitalizacion-istpet/titulacion_istpet

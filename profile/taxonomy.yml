@@ -57,6 +57,10 @@ tags:
       - "apis rest"
       - "rest"
       - "restful"
+      - "apis"
+      - "api"
+      - "api development"
+      - "desarrollo de apis"
 
   # Frontend
   angular:
@@ -145,6 +149,9 @@ tags:
       - "docker"
       - "docker compose"
       - "docker-compose"
+      - "containerization"
+      - "contenedores"
+      - "containers"
   kubernetes:
     category: devops
     aliases:
@@ -263,6 +270,11 @@ tags:
       - "cybersecurity"
       - "ethical hacking"
       - "ethical hacker"
+      - "ssl"
+      - "certificados ssl"
+      - "ssl certificates"
+      - "tls"
+      - "https"
   networking:
     category: networking
     aliases:
@@ -270,6 +282,9 @@ tags:
       - "redes"
       - "ccna"
       - "ccnav7"
+      - "dns"
+      - "registros dns"
+      - "dns records"
 
   # Herramientas
   n8n:
@@ -341,3 +356,138 @@ tags:
       - "bcrypt"
       - "hashing de contrasenas"
       - "password hashing"
+
+  # Bases de datos
+  relational-databases:
+    category: database
+    aliases:
+      - "relational databases"
+      - "relational database"
+      - "bases de datos relacionales"
+      - "base de datos relacional"
+      - "rdbms"
+      - "sql"
+      - "databases"
+      - "base de datos"
+      - "bases de datos"
+
+  # Backend
+  php:
+    category: backend
+    aliases:
+      - "php"
+      - "php 8"
+
+  # Frontend
+  responsive-design:
+    category: frontend
+    aliases:
+      - "responsive design"
+      - "diseno responsivo"
+      - "diseño responsivo"
+      - "mobile responsiveness"
+      - "cross-browser testing"
+      - "compatibilidad entre navegadores"
+      - "diseño responsive"
+      - "diseno responsive"
+      - "responsive"
+
+  # Calidad y pruebas
+  xunit:
+    category: quality
+    aliases:
+      - "xunit"
+      - "xunit.net"
+  testcontainers:
+    category: quality
+    aliases:
+      - "testcontainers"
+      - "pruebas de integracion con contenedores"
+      - "integration testing"
+
+  # Arquitectura
+  event-driven:
+    category: architecture
+    aliases:
+      - "event driven"
+      - "arquitectura orientada a eventos"
+      - "event sourcing"
+      - "eventos inmutables"
+  modular-monolith:
+    category: architecture
+    aliases:
+      - "modular monolith"
+      - "monolito modular"
+      - "arquitectura modular"
+
+  # Frontend
+  offline-first:
+    category: frontend
+    aliases:
+      - "offline first"
+      - "offline-first"
+      - "sincronizacion offline"
+      - "offline sync"
+      - "watermelondb"
+      - "expo"
+
+  # Seguridad
+  codeql:
+    category: security
+    aliases:
+      - "codeql"
+      - "sast"
+      - "analisis estatico de seguridad"
+      - "static analysis"
+
+  # Frontend
+  angular-ssr:
+    category: frontend
+    aliases:
+      - "angular universal"
+      - "angular ssr"
+      - "server side rendering"
+      - "renderizado del lado del servidor"
+      - "ssr"
+  seo:
+    category: frontend
+    aliases:
+      - "seo"
+      - "posicionamiento web"
+      - "sitemap"
+      - "indexacion"
+  accesibilidad:
+    category: frontend
+    aliases:
+      - "accesibilidad"
+      - "accessibility"
+      - "a11y"
+      - "wcag"
+      - "wave"
+  optimizacion-web:
+    category: frontend
+    aliases:
+      - "optimizacion web"
+      - "web performance"
+      - "webp"
+      - "avif"
+      - "optimizacion de imagenes"
+      - "core web vitals"
+
+  # DevOps
+  netlify:
+    category: devops
+    aliases:
+      - "netlify"
+      - "despliegue estatico"
+
+  # Seguridad
+  pentesting:
+    category: security
+    aliases:
+      - "pentesting"
+      - "auditoria de seguridad"
+      - "security audit"
+      - "penetration testing"
+      - "ethical hacking"
+      - "hacking etico"
