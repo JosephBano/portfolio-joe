@@ -514,3 +514,22 @@
     - "Security Audit"
     - "Penetration Testing"
     - "Ethical Hacking"
+
+- name: "oop"
+  category: "backend"
+  level: "avanzado"
+  aliases:
+    - "Programación orientada a objetos"
+    - "Object-Oriented Programming"
+    - "OOP"
+    - "SOLID"
+
+- name: "ai-assisted-development"
+  category: "tools"
+  level: "avanzado"
+  aliases:
+    - "Claude Code"
+    - "Cursor"
+    - "GitHub Copilot"
+    - "Desarrollo asistido por IA"
+    - "AI-Assisted Development"

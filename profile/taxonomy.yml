@@ -61,6 +61,9 @@ tags:
       - "api"
       - "api development"
       - "desarrollo de apis"
+      - "restful apis"
+      - "restful api"
+      - "restful"
 
   # Frontend
   angular:
@@ -491,3 +494,32 @@ tags:
       - "penetration testing"
       - "ethical hacking"
       - "hacking etico"
+
+  # Backend
+  oop:
+    category: backend
+    aliases:
+      - "oop"
+      - "object oriented programming"
+      - "object-oriented programming"
+      - "programacion orientada a objetos"
+      - "principios de diseno de software"
+      - "software design principles"
+      - "solid"
+
+  # Herramientas
+  ai-assisted-development:
+    category: tools
+    aliases:
+      - "claude code"
+      - "cursor"
+      - "windsurf"
+      - "copilot"
+      - "github copilot"
+      - "copilot cli"
+      - "gemini cli"
+      - "codex"
+      - "antigravity"
+      - "desarrollo asistido por ia"
+      - "ai-assisted development"
+      - "agentes de codigo"
