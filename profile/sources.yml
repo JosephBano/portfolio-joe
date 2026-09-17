@@ -1,0 +1,82 @@
+# profile/sources.yml — Fuentes de evidencia clasificadas (RF-EVID-001, RF-EVID-006, PD-03, PD-08)
+# Regla de confidencialidad y atribución:
+# - 'publico': Enlazable y presentable como proyecto u obra propia de Joseph.
+# - 'interno': Sustenta experiencia profesional bajo el puesto en el ISTPET.
+#              Queda PROHIBIDO nombrar o enlazar el repositorio en documentos públicos generados.
+#
+# Fuentes deliberadamente excluidas (participación marginal):
+# - Mi_ISTPET (1 / 306 commits): Colaboración puntual no representativa.
+# - gestion_recursos_humanos_istpet (1 / 223 commits): Colaboración puntual no representativa.
+
+- id: fake_reports
+  ruta_local: /home/joeman/Documents/istpet-dev/biometrico/fake_reports
+  confidencialidad: publico
+  permite_extraer: true
+  enlazable: true
+  url: https://github.com/JosephBano/fake_reports
+  descripcion: Generador de datos simulados y reportes biométricos de prueba. Remoto personal.
+
+- id: leccionario_inspeccion
+  ruta_local: /home/joeman/Documents/istpet-dev/escuela_conduccion_profesional/leccionario_inspeccion
+  confidencialidad: publico
+  permite_extraer: true
+  enlazable: true
+  url: https://github.com/JosephBano/leccionario_inspeccion
+  descripcion: Sistema de inspección y leccionario digital para escuela de conducción. Autoría exclusiva (88/88 commits).
+
+- id: titulacion_istpet
+  ruta_local: /home/joeman/Documents/istpet-dev/digitalizacion-istpet/titulacion_istpet
+  confidencialidad: publico
+  permite_extraer: true
+  enlazable: true
+  url: https://github.com/JosephBano/titulacion_istpet
+  descripcion: Módulo para gestión de expedientes y procesos de titulación académica.
+
+- id: biometric_sistem_reports
+  ruta_local: /home/joeman/Documents/istpet-dev/biometrico/biometric_sistem_reports
+  confidencialidad: interno
+  permite_extraer: true
+  enlazable: false
+  descripcion: Base del sistema SIBA para sincronización biométrica ZK. Alojado en cuenta personal con cesión pendiente al ISTPET (PD-08). Clasificado interno; no se enlaza.
+
+- id: generador-docs-istpet
+  ruta_local: /home/joeman/Documents/istpet-dev/generador-docs-istpet
+  confidencialidad: interno
+  permite_extraer: true
+  enlazable: false
+  descripcion: Utilidad interna para generación y procesamiento de documentos institucionales.
+
+- id: gestion_mecanica_ISTPET
+  ruta_local: /home/joeman/Documents/istpet-dev/gestion_mecanica_ISTPET
+  confidencialidad: interno
+  permite_extraer: true
+  enlazable: false
+  descripcion: Sistema institucional para control de talleres y mantenimiento mecánico. Organización ItspetDev.
+
+- id: gestion_administrativa_istpet
+  ruta_local: /home/joeman/Documents/istpet-dev/digitalizacion-istpet/gestion_administrativa_istpet
+  confidencialidad: interno
+  permite_extraer: true
+  enlazable: false
+  descripcion: Módulo para digitalización de trámites y flujos administrativos institucionales. Organización ItspetDev.
+
+- id: gestion_academica_istpet
+  ruta_local: /home/joeman/Documents/istpet-dev/digitalizacion-istpet/gestion_academica_istpet
+  confidencialidad: interno
+  permite_extraer: true
+  enlazable: false
+  descripcion: Plataforma integral de gestión académica (base de AMMI Online). Organización ItspetDev.
+
+- id: Bienestar_Institucional
+  ruta_local: /home/joeman/Documents/istpet-dev/digitalizacion-istpet/Bienestar_Institucional
+  confidencialidad: interno
+  permite_extraer: true
+  enlazable: false
+  descripcion: Sistema de atención, seguimiento y registro de bienestar estudiantil e institucional. 224 commits de Joseph. Organización ItspetDev.
+
+- id: Istpet_Vehiculos
+  ruta_local: /home/joeman/Documents/istpet-dev/escuela_conduccion_profesional/Istpet_Vehiculos
+  confidencialidad: interno
+  permite_extraer: true
+  enlazable: false
+  descripcion: Sistema de bitácora, mantenimiento e inventario vehicular (base de VITA).
