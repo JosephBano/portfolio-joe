@@ -1,0 +1,356 @@
+# profile/skills.yml — Habilidades técnicas, niveles y alias ATS (RF-DATOS-004)
+# Vocabulario cerrado de niveles: 'basico', 'intermedio', 'avanzado'
+
+- name: "csharp"
+  category: "backend"
+  level: "avanzado"
+  aliases:
+    - ".NET"
+    - "C#"
+    - "C# .NET"
+    - "ASP.NET"
+    - "ASP.NET Core"
+    - "ASP.NET Core MVC"
+    - ".NET 8"
+    - ".NET 9"
+    - ".NET 10"
+
+- name: "python"
+  category: "backend"
+  level: "intermedio"
+  aliases:
+    - "Python"
+    - "Python 3"
+    - "Django"
+
+- name: "flask"
+  category: "backend"
+  level: "intermedio"
+  aliases:
+    - "Flask"
+
+- name: "django"
+  category: "backend"
+  level: "intermedio"
+  aliases:
+    - "Django"
+
+- name: "entity-framework"
+  category: "backend"
+  level: "avanzado"
+  aliases:
+    - "Entity Framework"
+    - "Entity Framework Core"
+    - "EF Core"
+
+- name: "rest-api"
+  category: "backend"
+  level: "avanzado"
+  aliases:
+    - "REST APIs"
+    - "APIs REST"
+    - "RESTful APIs"
+    - "Web APIs"
+
+- name: "jwt"
+  category: "security"
+  level: "avanzado"
+  aliases:
+    - "JWT"
+    - "JSON Web Tokens"
+
+- name: "rbac"
+  category: "security"
+  level: "avanzado"
+  aliases:
+    - "RBAC"
+    - "Role-Based Access Control"
+    - "Control de acceso basado en roles"
+
+- name: "alembic"
+  category: "backend"
+  level: "intermedio"
+  aliases:
+    - "Alembic"
+
+- name: "questpdf"
+  category: "backend"
+  level: "intermedio"
+  aliases:
+    - "QuestPDF"
+
+- name: "angular"
+  category: "frontend"
+  level: "avanzado"
+  aliases:
+    - "Angular"
+    - "Angular 17"
+    - "Angular 18"
+    - "Angular 19"
+
+- name: "typescript"
+  category: "frontend"
+  level: "avanzado"
+  aliases:
+    - "TypeScript"
+    - "TS"
+
+- name: "javascript"
+  category: "frontend"
+  level: "avanzado"
+  aliases:
+    - "JavaScript"
+    - "ES6+"
+    - "JS"
+
+- name: "react-native"
+  category: "frontend"
+  level: "intermedio"
+  aliases:
+    - "React Native"
+
+- name: "tailwind"
+  category: "frontend"
+  level: "avanzado"
+  aliases:
+    - "Tailwind CSS"
+    - "Tailwind"
+
+- name: "bootstrap"
+  category: "frontend"
+  level: "avanzado"
+  aliases:
+    - "Bootstrap"
+    - "Bootstrap 5"
+
+- name: "scss"
+  category: "frontend"
+  level: "avanzado"
+  aliases:
+    - "SCSS"
+    - "Sass"
+
+- name: "html"
+  category: "frontend"
+  level: "avanzado"
+  aliases:
+    - "HTML"
+    - "HTML5"
+
+- name: "css"
+  category: "frontend"
+  level: "avanzado"
+  aliases:
+    - "CSS"
+    - "CSS3"
+
+- name: "ajax"
+  category: "frontend"
+  level: "avanzado"
+  aliases:
+    - "AJAX"
+
+- name: "postgresql"
+  category: "database"
+  level: "avanzado"
+  aliases:
+    - "PostgreSQL"
+    - "Postgres"
+
+- name: "mysql"
+  category: "database"
+  level: "avanzado"
+  aliases:
+    - "MySQL"
+
+- name: "mariadb"
+  category: "database"
+  level: "avanzado"
+  aliases:
+    - "MariaDB"
+
+- name: "mongodb"
+  category: "database"
+  level: "intermedio"
+  aliases:
+    - "MongoDB"
+    - "Mongo"
+
+- name: "redis"
+  category: "database"
+  level: "intermedio"
+  aliases:
+    - "Redis"
+
+- name: "docker"
+  category: "devops"
+  level: "avanzado"
+  aliases:
+    - "Docker"
+    - "Docker Compose"
+
+- name: "kubernetes"
+  category: "devops"
+  level: "intermedio"
+  aliases:
+    - "Kubernetes"
+    - "k8s"
+
+- name: "git"
+  category: "devops"
+  level: "avanzado"
+  aliases:
+    - "Git"
+
+- name: "gitlab"
+  category: "devops"
+  level: "avanzado"
+  aliases:
+    - "GitLab"
+    - "GitLab CI"
+
+- name: "github"
+  category: "devops"
+  level: "avanzado"
+  aliases:
+    - "GitHub"
+    - "GitHub Actions"
+
+- name: "ci-cd"
+  category: "devops"
+  level: "avanzado"
+  aliases:
+    - "CI/CD"
+    - "Continuous Integration"
+
+- name: "azure"
+  category: "devops"
+  level: "basico"
+  aliases:
+    - "Azure"
+    - "Microsoft Azure"
+
+- name: "aws"
+  category: "devops"
+  level: "basico"
+  aliases:
+    - "AWS"
+    - "Amazon Web Services"
+
+- name: "linux"
+  category: "devops"
+  level: "avanzado"
+  aliases:
+    - "Linux"
+    - "Ubuntu"
+
+- name: "windows-server"
+  category: "devops"
+  level: "intermedio"
+  aliases:
+    - "Windows Server"
+
+- name: "multi-tenant"
+  category: "architecture"
+  level: "avanzado"
+  aliases:
+    - "Multi-tenant"
+    - "Multitenancy"
+
+- name: "microservices"
+  category: "architecture"
+  level: "intermedio"
+  aliases:
+    - "Microservices"
+    - "Microservicios"
+
+- name: "clean-architecture"
+  category: "architecture"
+  level: "intermedio"
+  aliases:
+    - "Clean Architecture"
+    - "Arquitectura Limpia"
+
+- name: "scrum"
+  category: "methodology"
+  level: "avanzado"
+  aliases:
+    - "Scrum"
+
+- name: "kanban"
+  category: "methodology"
+  level: "avanzado"
+  aliases:
+    - "Kanban"
+
+- name: "agile"
+  category: "methodology"
+  level: "avanzado"
+  aliases:
+    - "Agile"
+    - "Metodologías Ágiles"
+
+- name: "pandas"
+  category: "data"
+  level: "intermedio"
+  aliases:
+    - "pandas"
+
+- name: "numpy"
+  category: "data"
+  level: "intermedio"
+  aliases:
+    - "numpy"
+
+- name: "deepseek-api"
+  category: "ai"
+  level: "intermedio"
+  aliases:
+    - "DeepSeek API"
+    - "IA"
+    - "AI"
+
+- name: "trello"
+  category: "tools"
+  level: "avanzado"
+  aliases:
+    - "Trello"
+
+- name: "clickup"
+  category: "tools"
+  level: "avanzado"
+  aliases:
+    - "ClickUp"
+
+- name: "notion"
+  category: "tools"
+  level: "avanzado"
+  aliases:
+    - "Notion"
+
+- name: "slack"
+  category: "tools"
+  level: "avanzado"
+  aliases:
+    - "Slack"
+
+- name: "n8n"
+  category: "tools"
+  level: "intermedio"
+  aliases:
+    - "n8n"
+
+- name: "cybersecurity"
+  category: "security"
+  level: "intermedio"
+  aliases:
+    - "Ciberseguridad"
+    - "Cybersecurity"
+
+- name: "networking"
+  category: "networking"
+  level: "intermedio"
+  aliases:
+    - "Redes"
+    - "Networking"
+    - "CCNA"

@@ -1,0 +1,81 @@
+# profile/certifications.yml — Certificaciones y cursos (RF-DATOS-002)
+
+- id: "cert-cisco-ethical-hacker"
+  title: "Ethical Hacker"
+  issuer: "Cisco Networking Academy"
+  year: 2025
+  pdf_path: "privado/documentos/certificados/cisco-ethical-hacker-2025.pdf"
+  tags:
+    - "cybersecurity"
+
+- id: "cert-cisco-ccna-intro"
+  title: "CCNAv7: Introduction to Networks"
+  issuer: "Cisco Networking Academy"
+  year: 2022
+  pdf_path: "privado/documentos/certificados/cisco-ccnav7-intro-networks-2022.pdf"
+  tags:
+    - "networking"
+
+- id: "cert-cisco-intro-ciberseguridad"
+  title: "Introducción a Ciberseguridad"
+  issuer: "Cisco Networking Academy"
+  year: 2022
+  pdf_path: "privado/documentos/certificados/cisco-intro-ciberseguridad-2022.pdf"
+  tags:
+    - "cybersecurity"
+
+- id: "cert-udemy-master-aspnet-mvc"
+  title: "Master en ASP.NET MVC con Entity Framework (.NET 10)"
+  issuer: "Udemy"
+  year: 2024
+  pdf_path: "privado/documentos/certificados/udemy-master-aspnet-mvc-2024.pdf"
+  tags:
+    - "csharp"
+    - "entity-framework"
+
+- id: "cert-udemy-aspnet-core-mvc-9"
+  title: "Aprende ASP.NET Core MVC 9: Proyectos desde Cero"
+  issuer: "Udemy"
+  year: 2024
+  pdf_path: "privado/documentos/certificados/udemy-aspnet-core-mvc-9-2024.pdf"
+  tags:
+    - "csharp"
+
+- id: "cert-udemy-python-django-facturacion"
+  title: "Sistema de Compra y Facturación con Python y Django"
+  issuer: "Udemy"
+  year: 2024
+  pdf_path: "privado/documentos/certificados/udemy-python-django-facturacion-2024.pdf"
+  tags:
+    - "python"
+    - "django"
+
+- id: "cert-udemy-angular-dotnet-core"
+  title: "Angular + .NET Core: Aplicación de Preguntas y Respuestas"
+  issuer: "Udemy"
+  year: 2023
+  pdf_path: "privado/documentos/certificados/udemy-angular-dotnet-core-2023.pdf"
+  tags:
+    - "angular"
+    - "csharp"
+
+- id: "cert-udemy-git-github"
+  title: "GIT + GitHub: Sistema de Control de Versiones"
+  issuer: "Udemy"
+  year: 2023
+  pdf_path: "privado/documentos/certificados/udemy-git-github-2023.pdf"
+  tags:
+    - "git"
+    - "github"
+
+- id: "cert-udemy-desarrollo-web-completo"
+  title: "Desarrollo Web Completo con HTML5, CSS3, JS, AJAX, PHP y MySQL"
+  issuer: "Udemy"
+  year: 2022
+  pdf_path: "privado/documentos/certificados/udemy-desarrollo-web-completo-2022.pdf"
+  tags:
+    - "html"
+    - "css"
+    - "javascript"
+    - "ajax"
+    - "mysql"
