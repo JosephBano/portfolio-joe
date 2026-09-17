@@ -1,0 +1,15 @@
+# profile/languages.yml — Idiomas y niveles de dominio (RF-DATOS-002)
+
+- language:
+    es: "Español"
+    en: "Spanish"
+  level:
+    es: "Nativo"
+    en: "Native"
+
+- language:
+    es: "Inglés"
+    en: "English"
+  level:
+    es: "Avanzado"
+    en: "Advanced"

@@ -1,0 +1,101 @@
+# profile/experience.yml — Experiencia laboral y viñetas atómicas (RF-DATOS-003, RF-EVID-006)
+# Regla: toda viñeta debe tener id único, tags de taxonomy.yml, weight (1-5), es, en, y evidence de sources.yml.
+
+- company: "Instituto Tecnológico Superior Mayor Pedro Traversari (ISTPET)"
+  role:
+    es: "Full Stack Developer"
+    en: "Full Stack Developer"
+  start_date: "2023-09"
+  end_date: "present"
+  location:
+    es: "Quito, Ecuador"
+    en: "Quito, Ecuador"
+  bullets:
+    - id: "exp-istpet-001"
+      tags:
+        - "csharp"
+        - "python"
+        - "flask"
+        - "postgresql"
+        - "multi-tenant"
+        - "jwt"
+        - "rbac"
+        - "docker"
+      weight: 5
+      es: "Diseñó y desplegó el backend de sincronización biométrica con modelo multi-tenant (esquema por institución) en PostgreSQL, cálculo de métricas de asistencia y autenticación JWT con 6 roles RBAC."
+      en: "Architected and deployed a multi-tenant biometric synchronization backend (schema-per-institution) in PostgreSQL, attendance risk scoring metrics, and JWT authentication with 6 RBAC roles."
+      evidence:
+        - "biometric_sistem_reports"
+        - "fake_reports"
+
+    - id: "exp-istpet-002"
+      tags:
+        - "angular"
+        - "csharp"
+        - "mariadb"
+        - "entity-framework"
+        - "questpdf"
+        - "jwt"
+        - "rbac"
+      weight: 5
+      es: "Construyó desde cero la plataforma integral de gestión académica para el ciclo completo de admisiones, matrículas, pagos y distributivos docentes con más de 100 usuarios activos."
+      en: "Built from scratch the comprehensive academic management platform covering admissions, enrollment, tuition payments, and faculty distribution for 100+ active users."
+      evidence:
+        - "gestion_academica_istpet"
+
+    - id: "exp-istpet-003"
+      tags:
+        - "angular"
+        - "csharp"
+        - "mysql"
+        - "docker"
+        - "jwt"
+        - "rbac"
+      weight: 4
+      es: "Centralizó más de 500 GB de evidencias documentales institucionales para el proceso de acreditación ante el CACES con soporte simultáneo para 60 usuarios activos."
+      en: "Centralized over 500 GB of institutional documentary evidence for the CACES accreditation process with concurrent access for 60 active users."
+      evidence:
+        - "gestion_administrativa_istpet"
+        - "generador-docs-istpet"
+
+    - id: "exp-istpet-004"
+      tags:
+        - "angular"
+        - "csharp"
+        - "mysql"
+        - "docker"
+        - "entity-framework"
+        - "rbac"
+      weight: 4
+      es: "Digitalizó la flota institucional de 100 vehículos mediante módulos web de órdenes de trabajo, control de inventario de repuestos y flujo de compras."
+      en: "Digitized an institutional fleet of 100 vehicles by developing modules for maintenance work orders, spare parts inventory, and procurement workflows."
+      evidence:
+        - "Istpet_Vehiculos"
+
+    - id: "exp-istpet-005"
+      tags:
+        - "docker"
+        - "kubernetes"
+        - "linux"
+        - "windows-server"
+      weight: 5
+      es: "Orquestó el despliegue de cinco sistemas empresariales contenerizados utilizando Docker y Kubernetes (deploys, services, configmaps) en servidores Linux y Windows Server."
+      en: "Orchestrated containerized deployments for five enterprise systems using Docker and Kubernetes (deploys, services, configmaps) across Linux and Windows Server environments."
+      evidence:
+        - "gestion_mecanica_ISTPET"
+        - "Bienestar_Institucional"
+
+    - id: "exp-istpet-006"
+      tags:
+        - "scrum"
+        - "kanban"
+        - "git"
+        - "gitlab"
+        - "ci-cd"
+        - "agile"
+      weight: 4
+      es: "Lideró el ciclo completo de vida del software bajo marcos ágiles (Scrum/Kanban), gestionando repositorios institucionales en GitLab e integrando prácticas de CI/CD."
+      en: "Led the full software development lifecycle under agile frameworks (Scrum/Kanban), managing institutional GitLab repositories and integrating CI/CD workflows."
+      evidence:
+        - "Bienestar_Institucional"
+        - "gestion_academica_istpet"
