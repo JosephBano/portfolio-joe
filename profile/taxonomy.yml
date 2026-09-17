@@ -292,3 +292,52 @@ tags:
     category: tools
     aliases:
       - "slack"
+
+  # Calidad y pruebas
+  testing:
+    category: quality
+    aliases:
+      - "testing"
+      - "pruebas unitarias"
+      - "unit testing"
+      - "unit tests"
+      - "pruebas automatizadas"
+      - "automated testing"
+      - "mstest"
+      - "moq"
+      - "fluentassertions"
+      - "tdd"
+
+  # Frontend
+  angular-material:
+    category: frontend
+    aliases:
+      - "angular material"
+      - "material design"
+      - "angular cdk"
+
+  # Backend
+  swagger:
+    category: backend
+    aliases:
+      - "swagger"
+      - "openapi"
+      - "swashbuckle"
+      - "documentacion de api"
+      - "api documentation"
+
+  mailkit:
+    category: backend
+    aliases:
+      - "mailkit"
+      - "smtp"
+      - "notificaciones por correo"
+      - "email notifications"
+
+  # Seguridad
+  bcrypt:
+    category: security
+    aliases:
+      - "bcrypt"
+      - "hashing de contrasenas"
+      - "password hashing"
