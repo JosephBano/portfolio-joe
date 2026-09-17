@@ -57,6 +57,10 @@ tags:
       - "apis rest"
       - "rest"
       - "restful"
+      - "apis"
+      - "api"
+      - "api development"
+      - "desarrollo de apis"
 
   # Frontend
   angular:
@@ -145,6 +149,9 @@ tags:
       - "docker"
       - "docker compose"
       - "docker-compose"
+      - "containerization"
+      - "contenedores"
+      - "containers"
   kubernetes:
     category: devops
     aliases:
@@ -341,3 +348,14 @@ tags:
       - "bcrypt"
       - "hashing de contrasenas"
       - "password hashing"
+
+  # Bases de datos
+  relational-databases:
+    category: database
+    aliases:
+      - "relational databases"
+      - "relational database"
+      - "bases de datos relacionales"
+      - "base de datos relacional"
+      - "rdbms"
+      - "sql"

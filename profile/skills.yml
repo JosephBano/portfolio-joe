@@ -398,3 +398,12 @@
     - "BCrypt"
     - "Password Hashing"
     - "Hashing de contraseñas"
+
+- name: "relational-databases"
+  category: "database"
+  level: "avanzado"
+  aliases:
+    - "Bases de datos relacionales"
+    - "Relational Databases"
+    - "RDBMS"
+    - "SQL"
