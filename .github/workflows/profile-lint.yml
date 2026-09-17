@@ -1,0 +1,34 @@
+name: profile-lint
+
+on:
+  pull_request:
+    branches: [ develop, main ]
+  push:
+    branches: [ develop, main ]
+
+jobs:
+  validate:
+    name: schema-and-taxonomy-validation (V-01, V-03)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install PyYAML
+        run: pip install pyyaml
+
+      - name: Run profile validation script
+        run: python3 .github/scripts/validate_profile.py
+
+  profile-lint:
+    name: profile-lint
+    needs: [validate]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Profile Lint Status Check
+        run: echo "Todos los esquemas y validaciones de perfil pasaron satisfactoriamente."

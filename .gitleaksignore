@@ -1,0 +1,4 @@
+# .gitleaksignore — Exclusiones justificadas (RF-SEG-005, R-03)
+# Justificación: .secrets.example es la plantilla canónica que documenta las claves
+# requeridas con valores sintéticos de ejemplo. No contiene secretos reales.
+.secrets.example
