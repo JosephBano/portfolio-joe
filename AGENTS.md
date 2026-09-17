@@ -177,7 +177,8 @@ Al auditar o hacer referencia a repositorios con confidencialidad `interno` o `c
 
 - Archivo de registro: `privado/aplicaciones.yml`.
 - **Vocabulario cerrado de estados:**
-  `borrador`, `postulado`, `screening`, `tecnica`, `final`, `oferta`, `aceptada`, `rechazada`, `sin_respuesta`, `retirada`.
+  `borrador`, `postulado`, `screening`, `tecnica`, `final`, `oferta`, `aceptada`, `rechazada`, `sin_respuesta`, `retirada`, `descartada`.
+- **`descartada` (PD-10):** Joseph evalúa la oferta y decide **no** postular. Es un estado terminal que nunca pasó por `postulado`, así que queda **fuera del embudo de conversión** de la analítica: contarla como pérdida falsearía la tasa de respuesta. Se analiza aparte, para responder qué tipo de ofertas se descartan y por qué.
 - **Regla de inmutabilidad del `timeline`:** Las transiciones de estado solo se registran anexando un nuevo objeto `{ fecha: "AAAA-MM-DD", evento: "..." }`. Queda prohibido modificar, sobrescribir o eliminar eventos anteriores.
 - **Umbral de inactividad (PD-01):** Toda postulación en estado `postulado`, `screening` o `tecnica` que supere **21 días calendario** sin comunicación ni eventos nuevos debe transicionar automáticamente al estado `sin_respuesta`.
 

@@ -270,6 +270,11 @@ tags:
       - "cybersecurity"
       - "ethical hacking"
       - "ethical hacker"
+      - "ssl"
+      - "certificados ssl"
+      - "ssl certificates"
+      - "tls"
+      - "https"
   networking:
     category: networking
     aliases:
@@ -277,6 +282,9 @@ tags:
       - "redes"
       - "ccna"
       - "ccnav7"
+      - "dns"
+      - "registros dns"
+      - "dns records"
 
   # Herramientas
   n8n:
@@ -359,3 +367,24 @@ tags:
       - "base de datos relacional"
       - "rdbms"
       - "sql"
+      - "databases"
+      - "base de datos"
+      - "bases de datos"
+
+  # Backend
+  php:
+    category: backend
+    aliases:
+      - "php"
+      - "php 8"
+
+  # Frontend
+  responsive-design:
+    category: frontend
+    aliases:
+      - "responsive design"
+      - "diseno responsivo"
+      - "diseño responsivo"
+      - "mobile responsiveness"
+      - "cross-browser testing"
+      - "compatibilidad entre navegadores"

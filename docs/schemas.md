@@ -151,7 +151,8 @@ Registro cronológico y evolutivo de postulaciones (RF-TRACK-001, RF-TRACK-002, 
     7. `aceptada`: Oferta aceptada por Joseph.
     8. `rechazada`: Postulación descartada por la empresa.
     9. `sin_respuesta`: Sin novedad tras 21 días del último evento (PD-01).
-    10. `retirada`: Joseph retira su candidatura voluntariamente.
+    10. `retirada`: Joseph retira su candidatura voluntariamente tras haber postulado.
+    11. `descartada`: Joseph evalúa la oferta y decide no postular (PD-10). Terminal; nunca pasó por `postulado`. Excluida del embudo de conversión y analizada por separado.
   - `timeline` *(list of objects, solo anexión obligatorio)*:
     - `fecha` *(string AAAA-MM-DD)*
     - `evento` *(string)*

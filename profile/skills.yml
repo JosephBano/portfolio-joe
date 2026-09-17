@@ -407,3 +407,17 @@
     - "Relational Databases"
     - "RDBMS"
     - "SQL"
+
+- name: "php"
+  category: "backend"
+  level: "basico"
+  aliases:
+    - "PHP"
+
+- name: "responsive-design"
+  category: "frontend"
+  level: "avanzado"
+  aliases:
+    - "Diseño responsivo"
+    - "Responsive Design"
+    - "Mobile Responsiveness"
