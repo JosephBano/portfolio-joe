@@ -52,7 +52,8 @@ Para preservar la decisión D-01 e impedir que `tools/` crezca hasta convertirse
 - **Exactamente dos argumentos posicionales de ruta:** archivo Markdown de entrada y archivo `.docx` de salida.
 - **Cero configuración:** sin archivos de configuración, flags complejas ni interfaz interactiva.
 - **Sin lógica de negocio ni redacción:** el script no decide viñetas, no traduce, no calcula coincidencias ni genera contenido; solo renderiza la estructura de texto recibida.
-- **Error explícito:** ante cualquier elemento de Markdown no admitido (tablas, imágenes, bloques de código, citas), el script aborta con código distinto de cero y un mensaje que indica la línea ofensora; jamás se degrada en silencio.
+- **Markdown admitido:** encabezados `#` y `##` (que se emiten con los estilos nativos `Heading 1` y `Heading 2`), párrafos, listas con `-`, negrita `**texto**`, cursiva `*texto*` e hipervínculos `[texto](url)`.
+- **Error explícito:** ante cualquier elemento de Markdown no admitido (tablas, imágenes, bloques de código, citas) **o ante un marcador de énfasis sin cerrar**, el script aborta con código distinto de cero y un mensaje que indica la línea ofensora; jamás se degrada en silencio. Un asterisco que llegue al documento tal cual es un defecto, no una salida aceptable.
 
 Cualquier necesidad de ampliar este script o superar estos límites obliga a volver a revisión funcional del spec con Joseph.
 

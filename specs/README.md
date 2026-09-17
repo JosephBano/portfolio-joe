@@ -17,12 +17,18 @@ anterior en «Fuentes y decisiones vigentes».
 |---|---|---|
 | Carpeta | `NNN-slug` en minúsculas y guiones, tres a cinco palabras | `001-repo-cv-ats` |
 | Campo `ID` dentro de `spec.md` | `SPEC-NNN` | `SPEC-001` |
-| Rama de trabajo | `spec/NNN-slug` | `spec/001-repo-cv-ats` |
+| Rama de trabajo | `spec/NNN-slug`, **una sola por spec** | `spec/001-repo-cv-ats` |
 | Requisito | `RF-<ÁREA>-NNN`, numerado dentro de su área y único en el spec | `RF-SEG-004` |
 | Tarea | `T-NN`, única dentro de `tasks.md` | `T-03` |
 | Punto de decisión | `PD-NN`, único dentro del spec | `PD-02` |
 | Caso de punta a punta | `E2E-NN`, único dentro de `test-e2e.md` | `E2E-01` |
 | ADR derivado | `ADR-NNN-slug.md` en `docs/adr/`, con numeración propia e independiente de la de los specs | `docs/adr/ADR-001-render-docx.md` |
+
+Un spec, una rama. Las tareas de `tasks.md` no abren rama propia: se integran
+sobre la rama del spec, en el orden que fija `plan.md`, cada una con su commit.
+La rama del spec entra a `develop` por un único Pull Request y se borra al
+mezclarse. Abrir una rama por tarea multiplica las ramas sin aportar
+aislamiento, porque todas comparten el mismo spec y el mismo revisor.
 
 El número siguiente se obtiene mirando las carpetas existentes en `specs/`,
 no el índice: el índice puede quedar desactualizado, las carpetas no. Si dos
