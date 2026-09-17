@@ -255,6 +255,6 @@ que el esquema documentado no basta, no lo edita: reporta al coordinador.
       No hay excepciones.
 - [x] Las tareas tienen dependencias y límites de edición explícitos, y los tres
       archivos de conflicto probable tienen dueño único.
-- [ ] Las pruebas verifican comportamientos distintos: `profile-lint` valida
-      estructura, los recorridos E2E validan comportamiento observable. Se
-      confirma al completar `test-e2e.md`.
+- [x] Las pruebas verifican comportamientos distintos: `profile-lint` valida
+      estructura, los recorridos E2E validan comportamiento observable. Confirmado
+      con los 14 recorridos de `test-e2e.md` aprobados el 2026-09-17.
