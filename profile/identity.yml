@@ -1,0 +1,26 @@
+# profile/identity.yml — Identidad profesional pública (RF-DATOS-005, RF-DATOS-006)
+# Regla: los datos de contacto NUNCA van literales; solo referencias {{secrets.*}}
+
+name: "Joseph Andrés Baño Naranjo"
+
+titles:
+  fullstack: "Full Stack Developer"
+  backend: "Backend Engineer (.NET / Python)"
+  cloud: "DevOps & Cloud Specialist"
+
+links:
+  - name: "GitHub"
+    url: "https://github.com/JosephBano"
+  - name: "LinkedIn"
+    url: "https://www.linkedin.com/in/joemandev/"
+
+contact:
+  telefono: "{{secrets.telefono}}"
+  email: "{{secrets.email}}"
+  ciudad: "{{secrets.ciudad}}"
+  pais: "{{secrets.pais}}"
+  direccion: "{{secrets.direccion}}"
+
+summary:
+  es: "Desarrollador Full Stack con más de 3 años de experiencia en el stack .NET/C# + Angular, con sólido dominio de PostgreSQL, bases de datos no relacionales, y despliegue con Docker y Kubernetes. He diseñado y llevado a producción 5 sistemas empresariales end-to-end, implementando APIs REST, autenticación JWT y seguridad RBAC. Trabajo bajo metodologías ágiles (Scrum/Kanban) con GitLab y flujos CI/CD. Capacidad para asumir roles de arquitectura, backend, frontend y DevOps según las necesidades del proyecto."
+  en: "Full Stack Developer with 3+ years of experience in the .NET/C# + Angular stack, with strong expertise in PostgreSQL, NoSQL databases, and production deployments using Docker and Kubernetes. Architected and launched 5 end-to-end enterprise systems to production, implementing REST APIs, JWT authentication, and RBAC security. Experienced with agile methodologies (Scrum/Kanban), GitLab, and CI/CD pipelines. Versatile capability to take on software architecture, backend, frontend, and DevOps responsibilities."
