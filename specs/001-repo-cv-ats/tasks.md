@@ -5,8 +5,10 @@
 **Estado:** Verificado (E2E completado, listo para T-15)
 
 Todas las rutas son relativas a `/home/joeman/Documents/proyects/portfolio-joe`.
-Toda tarea trabaja en una rama `spec/001-<sufijo>` que se integra a `develop`
-por Pull Request. Ningún mensaje de commit lleva atribución de co-autoría a un
+Todas las tareas trabajan sobre **una única rama**, `spec/001-repo-cv-ats`, cada
+una con su propio commit, en el orden que fija `plan.md`. Esa rama entra a
+`develop` por un solo Pull Request y se borra al mezclarse. Ninguna tarea abre
+rama propia. Ningún mensaje de commit lleva atribución de co-autoría a un
 agente (RF-SEG-007).
 
 ## Matriz de dependencias
@@ -57,7 +59,7 @@ agente (RF-SEG-007).
 ## T-02 — ADR-001: derivación de documentos y frontera de código
 
 **Objetivo:** queda registrada por escrito la decisión de PD-02 y el límite que impide que `tools/` crezca hasta convertirse en una aplicación.  
-**Repositorio y rama:** `portfolio-joe`; `spec/001-adr-derivacion`.  
+**Repositorio y rama:** `portfolio-joe`; `spec/001-repo-cv-ats`.  
 **Archivos exclusivos:** `docs/adr/ADR-001-derivacion-documentos.md`.  
 **Entrada/contrato:** decisión de Joseph del 2026-09-17 — `python-docx` construye el `.docx`, LibreOffice headless deriva el `.pdf`.  
 **Salida para integración:** ADR revisado que desbloquea T-07 y T-08.  
@@ -79,7 +81,7 @@ agente (RF-SEG-007).
 ## T-03 — ADR-002 y vocabulario canónico de etiquetas
 
 **Objetivo:** dos viñetas que hablan de lo mismo llevan la misma etiqueta, y el porcentaje de coincidencia deja de ser errático.  
-**Repositorio y rama:** `portfolio-joe`; `spec/001-taxonomia`.  
+**Repositorio y rama:** `portfolio-joe`; `spec/001-repo-cv-ats`.  
 **Archivos exclusivos:** `docs/adr/ADR-002-taxonomia-etiquetas.md`, `profile/taxonomy.yml`.  
 **Entrada/contrato:** PD-07 resuelto. Stack real de Joseph y diez repositorios clasificados.  
 **Salida para integración:** `taxonomy.yml` con etiquetas canónicas y alias; desbloquea T-07 y T-09.  
@@ -101,7 +103,7 @@ agente (RF-SEG-007).
 ## T-04 — ADR-003 y patrones de detección compartidos
 
 **Objetivo:** el hook local y el CI aplican exactamente el mismo criterio, para que ningún Pull Request sorprenda con un fallo que el equipo no reprodujo.  
-**Repositorio y rama:** `portfolio-joe`; `spec/001-patrones-seguridad`.  
+**Repositorio y rama:** `portfolio-joe`; `spec/001-repo-cv-ats`.  
 **Archivos exclusivos:** `docs/adr/ADR-003-deteccion-secretos.md`, `.security/patterns.txt`, `.security/README.md`.  
 **Entrada/contrato:** PD-06 resuelto. Archivo único de expresiones regulares consumido por ambos lados, con `gitleaks` como capa adicional en CI.  
 **Salida para integración:** `patterns.txt`; desbloquea T-05 y T-06.  
@@ -124,7 +126,7 @@ agente (RF-SEG-007).
 ## T-05 — Hook `pre-commit` que aborta el commit ofensor
 
 **Objetivo:** un commit con datos sensibles no llega a existir.  
-**Repositorio y rama:** `portfolio-joe`; `spec/001-hook-precommit`.  
+**Repositorio y rama:** `portfolio-joe`; `spec/001-repo-cv-ats`.  
 **Archivos exclusivos:** `.githooks/pre-commit`.  
 **Entrada/contrato:** `.security/patterns.txt` de T-04.  
 **Salida para integración:** hook ejecutable, instalable con `git config core.hooksPath .githooks`.  
@@ -147,7 +149,7 @@ agente (RF-SEG-007).
 ## T-06 — Flujos de GitHub Actions bloqueantes
 
 **Objetivo:** aunque el hook se omita con `--no-verify`, el Pull Request no es mezclable.  
-**Repositorio y rama:** `portfolio-joe`; `spec/001-actions-secret-guard`.  
+**Repositorio y rama:** `portfolio-joe`; `spec/001-repo-cv-ats`.  
 **Archivos exclusivos:** `.github/workflows/secret-guard.yml`, `.github/workflows/profile-lint.yml`, `.gitleaksignore`, `.github/scripts/validate_profile.py`.  
 **Entrada/contrato:** `.security/patterns.txt` de T-04; esquemas de `docs/schemas.md`.  
 **Salida para integración:** dos checks que se pueden exigir en la protección de ramas.  
@@ -170,7 +172,7 @@ agente (RF-SEG-007).
 ## T-07 — `AGENTS.md`, el contrato operativo
 
 **Objetivo:** existe un documento que hace la generación repetible sin código, y que un agente distinto puede seguir obteniendo el mismo resultado.  
-**Repositorio y rama:** `portfolio-joe`; `spec/001-agents-md`.  
+**Repositorio y rama:** `portfolio-joe`; `spec/001-repo-cv-ats`.  
 **Archivos exclusivos:** `AGENTS.md`.  
 **Entrada/contrato:** ADR-001 y ADR-002 revisados; escenarios 1, 2 y 4 del spec.  
 **Salida para integración:** contrato que T-12 y T-14 consumen.  
@@ -199,7 +201,7 @@ agente (RF-SEG-007).
 ## T-08 — Plantillas y derivador de documentos
 
 **Objetivo:** un `cv.md` se convierte en un `.docx` y un `.pdf` que un ATS parsea sin perder información.  
-**Repositorio y rama:** `portfolio-joe`; `spec/001-plantillas-render`.  
+**Repositorio y rama:** `portfolio-joe`; `spec/001-repo-cv-ats`.  
 **Archivos exclusivos:** `templates/ats-standard.md`, `templates/ats-compact.md`, `templates/cover-letter.md`, `templates/STYLE.md`, `tools/render_docx.py`.  
 **Entrada/contrato:** ADR-001; contrato de `render_docx.py`.  
 **Salida para integración:** plantillas y derivador que T-14 ejecuta.  
@@ -224,7 +226,7 @@ agente (RF-SEG-007).
 ## T-09 — Carga inicial de `profile/`
 
 **Objetivo:** todo lo que hoy vive en un `.docx` binario pasa a ser datos consultables, sin perder ni duplicar nada.  
-**Repositorio y rama:** `portfolio-joe`; `spec/001-carga-perfil`.  
+**Repositorio y rama:** `portfolio-joe`; `spec/001-repo-cv-ats`.  
 **Archivos exclusivos:** `profile/identity.yml`, `profile/experience.yml`, `profile/projects.yml`, `profile/skills.yml`, `profile/education.yml`, `profile/certifications.yml`, `profile/languages.yml`.  
 **Entrada/contrato:** texto extraído de `CV_JosephBano.docx`; `taxonomy.yml`; `docs/schemas.md`; `.secrets.example`.  
 **Salida para integración:** `profile/` validado por `profile-lint`.  
@@ -251,7 +253,7 @@ agente (RF-SEG-007).
 ## T-10 — `sources.yml` con las diez fuentes clasificadas
 
 **Objetivo:** el sistema sabe dónde está la evidencia de cada afirmación y qué puede decirse de cada fuente.  
-**Repositorio y rama:** `portfolio-joe`; `spec/001-fuentes-evidencia`.  
+**Repositorio y rama:** `portfolio-joe`; `spec/001-repo-cv-ats`.  
 **Archivos exclusivos:** `profile/sources.yml`.  
 **Entrada/contrato:** tabla de PD-03 y PD-08 del spec.  
 **Salida para integración:** registro de fuentes.  
@@ -276,7 +278,7 @@ agente (RF-SEG-007).
 ## T-11 — Variables personales y estructura de `privado/`
 
 **Objetivo:** los datos de contacto existen en un solo lugar, fuera de Git, y el repositorio declara qué claves necesita sin revelar sus valores.  
-**Repositorio y rama:** `portfolio-joe`; `spec/001-variables-privado`.  
+**Repositorio y rama:** `portfolio-joe`; `spec/001-repo-cv-ats`.  
 **Archivos exclusivos:** `.secrets.example`, `privado/.secrets`, estructura de `privado/`.  
 **Entrada/contrato:** `.gitignore` de T-01.  
 **Salida para integración:** lista canónica de claves.  
@@ -299,7 +301,7 @@ agente (RF-SEG-007).
 ## T-12 — `README.md`
 
 **Objetivo:** alguien que llega al repositorio entiende qué es y puede usarlo, y quien lo evalúa como portafolio ve criterio de ingeniería.  
-**Repositorio y rama:** `portfolio-joe`; `spec/001-readme`.  
+**Repositorio y rama:** `portfolio-joe`; `spec/001-repo-cv-ats`.  
 **Archivos exclusivos:** `README.md`.  
 **Entrada/contrato:** `AGENTS.md` de T-07.  
 **Salida para integración:** documentación principal.  
@@ -323,7 +325,7 @@ agente (RF-SEG-007).
 ## T-13 — Documentación de esquemas, reglas ATS y flujo
 
 **Objetivo:** las reglas del sistema están escritas y justificadas, no solo implícitas en el contrato del agente.  
-**Repositorio y rama:** `portfolio-joe`; `spec/001-docs`.  
+**Repositorio y rama:** `portfolio-joe`; `spec/001-repo-cv-ats`.  
 **Archivos exclusivos:** `docs/schemas.md`, `docs/ats-rules.md`, `docs/workflow.md`.  
 **Entrada/contrato:** requisitos del spec.  
 **Salida para integración:** `docs/schemas.md`, `docs/ats-rules.md`, `docs/workflow.md`.  

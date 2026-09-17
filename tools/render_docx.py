@@ -49,15 +49,24 @@ def add_hyperlink(paragraph, url, text, font_name="Calibri", font_size_pt=10, is
     hyperlink.append(new_run)
     paragraph._p.append(hyperlink)
 
-def parse_inline(paragraph, text, font_name="Calibri", default_size=11, default_color=None):
+def _fail_residual(plain, line_num):
+    """El marcado que no se consumió nunca se degrada en silencio (ADR-001, R-01)."""
+    if '*' in plain:
+        print(
+            f"ERROR [render_docx]: Línea {line_num}: marcado de énfasis sin cerrar o no admitido: "
+            f"{plain.strip()!r}. Admitidos: **negrita**, *cursiva*, [texto](url).",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+def parse_inline(paragraph, text, font_name="Calibri", default_size=11, default_color=None, line_num=0):
     """
-    Parsea tokens inline: enlaces [texto](url) y negritas **texto**.
-    Cualquier elemento no admitido (ej. imágenes ![], código ``, etc.) provoca error.
+    Parsea tokens inline: enlaces [texto](url), negritas **texto** y cursivas *texto*.
+    Cualquier elemento no admitido (imágenes ![], código ``, énfasis sin cerrar)
+    provoca error explícito: nunca se emite al documento tal cual.
     """
-    # Expresión regular para capturar hipervínculos o negritas
-    # Grupo 1 y 2: [texto](url)
-    # Grupo 3: **negrita**
-    pattern = re.compile(r'\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*')
+    # Grupo 1 y 2: [texto](url) · Grupo 3: **negrita** · Grupo 4: *cursiva*
+    pattern = re.compile(r'\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*|\*([^*\n]+)\*')
 
     last_idx = 0
     for match in pattern.finditer(text):
@@ -65,13 +74,14 @@ def parse_inline(paragraph, text, font_name="Calibri", default_size=11, default_
         # Texto plano anterior al match
         if start > last_idx:
             plain = text[last_idx:start]
+            _fail_residual(plain, line_num)
             run = paragraph.add_run(plain)
             run.font.name = font_name
             run.font.size = Pt(default_size)
             if default_color:
                 run.font.color.rgb = default_color
 
-        link_text, link_url, bold_text = match.groups()
+        link_text, link_url, bold_text, italic_text = match.groups()
         if link_text is not None:
             # Es un hipervínculo
             add_hyperlink(paragraph, link_url, link_text, font_name=font_name, font_size_pt=default_size)
@@ -83,12 +93,21 @@ def parse_inline(paragraph, text, font_name="Calibri", default_size=11, default_
             run.bold = True
             if default_color:
                 run.font.color.rgb = default_color
+        elif italic_text is not None:
+            # Es texto en cursiva
+            run = paragraph.add_run(italic_text)
+            run.font.name = font_name
+            run.font.size = Pt(default_size)
+            run.italic = True
+            if default_color:
+                run.font.color.rgb = default_color
 
         last_idx = end
 
     # Texto restante
     if last_idx < len(text):
         plain = text[last_idx:]
+        _fail_residual(plain, line_num)
         run = paragraph.add_run(plain)
         run.font.name = font_name
         run.font.size = Pt(default_size)
@@ -165,7 +184,7 @@ def render_md_to_docx(input_md_path, output_docx_path):
         # Encabezado 1 (# Nombre del candidato)
         if line.startswith('# '):
             title_text = line[2:].strip()
-            p = doc.add_paragraph()
+            p = doc.add_paragraph(style='Heading 1')
             p.paragraph_format.space_before = Pt(0)
             p.paragraph_format.space_after = Pt(2)
             run = p.add_run(title_text)
@@ -178,7 +197,7 @@ def render_md_to_docx(input_md_path, output_docx_path):
         # Encabezado 2 (## SECCIÓN)
         if line.startswith('## '):
             sec_text = line[3:].strip()
-            p = doc.add_paragraph()
+            p = doc.add_paragraph(style='Heading 2')
             p.paragraph_format.space_before = Pt(10)
             p.paragraph_format.space_after = Pt(3)
             p.paragraph_format.keep_with_next = True
@@ -205,7 +224,7 @@ def render_md_to_docx(input_md_path, output_docx_path):
             p.paragraph_format.space_before = Pt(0)
             p.paragraph_format.space_after = Pt(2.5)
             p.paragraph_format.line_spacing = 1.15
-            parse_inline(p, bullet_text, font_name='Calibri', default_size=10.5)
+            parse_inline(p, bullet_text, font_name='Calibri', default_size=10.5, line_num=line_num)
             continue
 
         # Párrafo regular
@@ -213,7 +232,7 @@ def render_md_to_docx(input_md_path, output_docx_path):
         p.paragraph_format.space_before = Pt(0)
         p.paragraph_format.space_after = Pt(3)
         p.paragraph_format.line_spacing = 1.15
-        parse_inline(p, stripped, font_name='Calibri', default_size=10.5)
+        parse_inline(p, stripped, font_name='Calibri', default_size=10.5, line_num=line_num)
 
     os.makedirs(os.path.dirname(os.path.abspath(output_docx_path)), exist_ok=True)
     doc.save(output_docx_path)

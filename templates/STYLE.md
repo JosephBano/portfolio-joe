@@ -35,6 +35,7 @@ Este documento establece las reglas visuales y estructurales inviolables para cu
 - Encabezado de nivel 2 (`## Sección`)
 - Párrafos de texto
 - Negrita (`**texto en negrita**`)
+- Cursiva (`*texto en cursiva*`)
 - Hipervínculos (`[texto visible](url)`)
 - Listas no ordenadas (`- viñeta de logro`)
 

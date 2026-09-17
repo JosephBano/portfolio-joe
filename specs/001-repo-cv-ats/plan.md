@@ -116,8 +116,9 @@ el PDF no se generó; no se sustituye por otro método en silencio.
   imágenes, sin encabezado ni pie, fuente Calibri 11 y encabezados con los
   estilos nativos `Heading 1` y `Heading 2`.
 - **Markdown admitido:** encabezados `#` y `##`, párrafos, listas con `-`,
-  énfasis `**` e hipervínculos `[texto](url)`. Cualquier otra construcción
-  provoca error explícito; no se degrada en silencio.
+  negrita `**texto**`, cursiva `*texto*` e hipervínculos `[texto](url)`.
+  Cualquier otra construcción, incluido un marcador de énfasis sin cerrar,
+  provoca error explícito con el número de línea; no se degrada en silencio.
 - **Dependencias:** `python-docx`. Nada más.
 - **Errores:** código distinto de cero y mensaje que nombre la línea ofensora.
 
