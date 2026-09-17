@@ -1,112 +1,220 @@
-# profile/projects.yml — Proyectos empresariales y sus viñetas asociadas (RF-DATOS-002, RF-DATOS-003)
+# profile/projects.yml — Proyectos destacados (RF-DATOS-003, RF-EVID-005, RF-EVID-006)
+# El orden de este archivo NO determina el del documento: se calcula por oferta (AGENTS.md §4.3).
+# Solo los proyectos con evidencia de una fuente 'publico' y enlazable llevan url.
 
-- id: "siba"
-  name: "SIBA — Sistema de Informes Biométricos"
+- id: hato-erp
+  name: HATO — ERP de gestión ganadera
   description:
-    es: "Aplicación web full stack para control de asistencia de personal, sincronización en tiempo real con dispositivos biométricos ZK y analítica de personal."
-    en: "Full stack web application for workforce attendance tracking, real-time ZK biometric hardware synchronization, and HR analytics."
+    es: Sistema de gestión integral para una hacienda ganadera en Ecuador, construido sobre un registro
+      inmutable de eventos fechados, con panel administrativo web y aplicación de campo que opera sin
+      conexión.
+    en: Comprehensive management system for a cattle farm in Ecuador, built on an immutable log of dated
+      events, with a web admin panel and an offline-capable field application.
+  url: https://github.com/JosephBano/erp-hacienda
+  evidence:
+  - erp-hacienda
+  bullets:
+  - id: proj-hato-001
+    tags:
+    - csharp
+    - modular-monolith
+    - event-driven
+    - postgresql
+    - entity-framework
+    weight: 5
+    es: Diseñó la arquitectura de un monolito modular en .NET 8 con seis módulos de dominio sobre un modelo
+      de eventos inmutables, con persistencia en PostgreSQL y 54 migraciones versionadas.
+    en: Architected a .NET 8 modular monolith with six domain modules over an immutable event model, backed
+      by PostgreSQL with 54 versioned migrations.
+  - id: proj-hato-002
+    tags:
+    - testing
+    - xunit
+    - testcontainers
+    - postgresql
+    weight: 5
+    es: 'Definió la estrategia de pruebas del sistema: 569 pruebas con xUnit y Testcontainers, ejecutando
+      la integración contra una instancia real de PostgreSQL en contenedor.'
+    en: 'Defined the system test strategy: 569 tests using xUnit and Testcontainers, running integration
+      against a real containerized PostgreSQL instance.'
+  - id: proj-hato-003
+    tags:
+    - angular
+    - react-native
+    - offline-first
+    - typescript
+    weight: 5
+    es: 'Dirigió el desarrollo de dos clientes: panel administrativo en Angular 21 y aplicación de campo
+      offline-first en React Native y Expo con WatermelonDB y resolución de sincronización.'
+    en: 'Led development of two clients: an Angular 21 admin panel and an offline-first field application
+      in React Native and Expo using WatermelonDB with sync conflict resolution.'
+  - id: proj-hato-004
+    tags:
+    - ci-cd
+    - codeql
+    - docker
+    - linux
+    weight: 4
+    es: 'Montó la infraestructura de entrega: integración continua con análisis estático CodeQL, despliegues
+      a entornos de staging y producción, Caddy como proxy inverso y renovación automatizada de certificados
+      TLS mediante systemd.'
+    en: 'Built the delivery infrastructure: continuous integration with CodeQL static analysis, staging
+      and production deployments, Caddy reverse proxy, and automated TLS certificate renewal via systemd.'
+- id: siba
+  name: SIBA — Sistema de Informes Biométricos
+  description:
+    es: Aplicación web full stack para control de asistencia de personal, sincronización en tiempo real
+      con dispositivos biométricos ZK y analítica de personal.
+    en: Full stack web application for workforce attendance tracking, real-time ZK biometric hardware
+      synchronization, and HR analytics.
   url: null
   bullets:
-    - id: "proj-siba-001"
-      tags:
-        - "python"
-        - "flask"
-        - "postgresql"
-        - "multi-tenant"
-        - "jwt"
-        - "rbac"
-        - "docker"
-      weight: 5
-      es: "Implementó arquitectura backend en Python/Flask con persistencia en PostgreSQL bajo esquema multi-tenant, migraciones versionadas con Alembic y autenticación JWT con 6 roles RBAC."
-      en: "Implemented Python/Flask backend architecture with PostgreSQL multi-tenant schema isolation, Alembic database migrations, and JWT authentication with 6 RBAC roles."
-      evidence:
-        - "biometric_sistem_reports"
-
-    - id: "proj-siba-002"
-      tags:
-        - "pandas"
-        - "numpy"
-        - "deepseek-api"
-        - "docker"
-      weight: 4
-      es: "Desarrolló motor de cálculo de indicadores de absentismo y Risk Score utilizando pandas/numpy, integrando generación de narrativas ejecutivas mediante la API de DeepSeek."
-      en: "Engineered an absenteeism and Risk Score calculation engine using pandas/numpy, integrating executive analytical narrative generation via DeepSeek API."
-      evidence:
-        - "fake_reports"
-        - "biometric_sistem_reports"
-
-- id: "ammi-online"
-  name: "AMMI Online — Sistema de Gestión Académica Virtual"
+  - id: proj-siba-001
+    tags:
+    - python
+    - flask
+    - postgresql
+    - multi-tenant
+    - jwt
+    - rbac
+    - docker
+    weight: 5
+    es: Implementó arquitectura backend en Python/Flask con persistencia en PostgreSQL bajo esquema multi-tenant,
+      migraciones versionadas con Alembic y autenticación JWT con 6 roles RBAC.
+    en: Implemented Python/Flask backend architecture with PostgreSQL multi-tenant schema isolation, Alembic
+      database migrations, and JWT authentication with 6 RBAC roles.
+    evidence:
+    - biometric_sistem_reports
+  - id: proj-siba-002
+    tags:
+    - pandas
+    - numpy
+    - deepseek-api
+    - docker
+    weight: 4
+    es: Desarrolló motor de cálculo de indicadores de absentismo y Risk Score utilizando pandas/numpy,
+      integrando generación de narrativas ejecutivas mediante la API de DeepSeek.
+    en: Engineered an absenteeism and Risk Score calculation engine using pandas/numpy, integrating executive
+      analytical narrative generation via DeepSeek API.
+    evidence:
+    - fake_reports
+    - biometric_sistem_reports
+- id: ammi-online
+  name: AMMI Online — Sistema de Gestión Académica Virtual
   description:
-    es: "Plataforma educativa para la gestión integral del ciclo académico: admisiones, matrículas, pagos de colegiatura, calificaciones y distributivos docentes."
-    en: "Academic platform managing the full institutional lifecycle: admissions, enrollments, tuition payments, grading, and faculty workload."
+    es: 'Plataforma educativa para la gestión integral del ciclo académico: admisiones, matrículas, pagos
+      de colegiatura, calificaciones y distributivos docentes.'
+    en: 'Academic platform managing the full institutional lifecycle: admissions, enrollments, tuition
+      payments, grading, and faculty workload.'
   url: null
   bullets:
-    - id: "proj-ammi-001"
-      tags:
-        - "angular"
-        - "typescript"
-        - "csharp"
-        - "mariadb"
-        - "entity-framework"
-        - "rest-api"
-      weight: 5
-      es: "Construyó la interfaz en Angular y servicios backend en .NET Core / C# con Entity Framework y base de datos MariaDB para más de 100 estudiantes activos."
-      en: "Developed Angular frontend and .NET Core / C# backend services using Entity Framework and MariaDB to support 100+ active students."
-      evidence:
-        - "gestion_academica_istpet"
-
-    - id: "proj-ammi-002"
-      tags:
-        - "questpdf"
-        - "csharp"
-        - "jwt"
-        - "rbac"
-      weight: 4
-      es: "Diseñó el módulo de generación automatizada de actas de calificaciones y reportes de matrícula en PDF utilizando QuestPDF con control de acceso por roles."
-      en: "Designed automated transcript and tuition PDF report generation workflows utilizing QuestPDF with role-based access control."
-      evidence:
-        - "gestion_academica_istpet"
-
-- id: "siplece"
-  name: "SIPLECE — Sistema de Auditoría CACES"
+  - id: proj-ammi-001
+    tags:
+    - angular
+    - typescript
+    - csharp
+    - mariadb
+    - entity-framework
+    - rest-api
+    weight: 5
+    es: Construyó la interfaz en Angular y servicios backend en .NET Core / C# con Entity Framework y
+      base de datos MariaDB para más de 100 estudiantes activos.
+    en: Developed Angular frontend and .NET Core / C# backend services using Entity Framework and MariaDB
+      to support 100+ active students.
+    evidence:
+    - gestion_academica_istpet
+  - id: proj-ammi-002
+    tags:
+    - questpdf
+    - csharp
+    - jwt
+    - rbac
+    weight: 4
+    es: Diseñó el módulo de generación automatizada de actas de calificaciones y reportes de matrícula
+      en PDF utilizando QuestPDF con control de acceso por roles.
+    en: Designed automated transcript and tuition PDF report generation workflows utilizing QuestPDF with
+      role-based access control.
+    evidence:
+    - gestion_academica_istpet
+- id: portafolio-warmymunay
+  name: Portafolio web WarmyMunay
   description:
-    es: "Sistema documental para centralizar evidencias y auditorías en el proceso de acreditación de educación superior."
-    en: "Document management system centralizing evidence and audit workflows for higher education institutional accreditation."
-  url: null
+    es: Sitio web personal en Angular con renderizado del lado del servidor, optimización de recursos
+      y verificación automatizada de accesibilidad, desplegado en producción.
+    en: Personal website in Angular with server-side rendering, asset optimization and automated accessibility
+      checks, deployed to production.
+  url: https://github.com/JosephBano/WebPortfolioWarmyMunay
+  evidence:
+  - WebPortfolioWarmyMunay
   bullets:
-    - id: "proj-siplece-001"
-      tags:
-        - "angular"
-        - "csharp"
-        - "mysql"
-        - "docker"
-        - "jwt"
-        - "rbac"
-      weight: 4
-      es: "Centralizó y catalogó más de 500 GB de evidencias documentales institucionales con control estricto de concurrencia e integridad para 60 auditores simultáneos."
-      en: "Centralized and cataloged over 500 GB of institutional documentary evidence with strict concurrency control and integrity checks for 60 simultaneous auditors."
-      evidence:
-        - "gestion_administrativa_istpet"
-        - "generador-docs-istpet"
-
-- id: "vita"
-  name: "VITA — Sistema de Bitácora Vehicular"
+  - id: proj-warmy-001
+    tags:
+    - angular
+    - angular-ssr
+    - typescript
+    - tailwind
+    - responsive-design
+    weight: 5
+    es: Desarrolló por completo un sitio en Angular 19 con renderizado del lado del servidor y Tailwind
+      CSS 4, desplegado en producción con redirecciones para aplicación de página única.
+    en: Solely developed an Angular 19 site with server-side rendering and Tailwind CSS 4, deployed to
+      production with single-page application redirects.
+  - id: proj-warmy-002
+    tags:
+    - optimizacion-web
+    - seo
+    weight: 4
+    es: 'Implementó la cadena de optimización de recursos: conversión automatizada de imágenes a WebP
+      y AVIF, compresión y generación de sitemap para indexación en buscadores.'
+    en: 'Implemented the asset optimization pipeline: automated image conversion to WebP and AVIF, compression,
+      and sitemap generation for search engine indexing.'
+  - id: proj-warmy-003
+    tags:
+    - accesibilidad
+    - testing
+    - ci-cd
+    weight: 4
+    es: Incorporó verificación automatizada de accesibilidad y una suite de pruebas ejecutada en integración
+      continua antes de cada despliegue.
+    en: Added automated accessibility verification and a test suite executed in continuous integration
+      before each deployment.
+- id: auditoria-seguridad-web
+  name: Auditoría de seguridad de aplicación web
   description:
-    es: "Plataforma para gestión de flota vehicular, órdenes de trabajo de mantenimiento preventivo y correctivo, compras e inventario."
-    en: "Fleet operations platform managing preventative/corrective maintenance work orders, inventory control, and purchasing workflows."
+    es: Auditoría de seguridad autorizada sobre una aplicación web, con alcance firmado, laboratorio aislado
+      y control documentado del perímetro de pruebas.
+    en: Authorized security audit of a web application, with signed scope, isolated lab environment and
+      documented control of the testing perimeter.
   url: null
+  evidence:
+  - auditoria-web-2026
   bullets:
-    - id: "proj-vita-001"
-      tags:
-        - "angular"
-        - "csharp"
-        - "mysql"
-        - "docker"
-        - "entity-framework"
-        - "rbac"
-      weight: 4
-      es: "Digitalizó la bitácora operativa y el mantenimiento de 100 vehículos institucionales mediante arquitectura desacoplada Angular + .NET con MySQL y Docker."
-      en: "Digitized operations logs and maintenance tracking for 100 vehicles using a decoupled Angular + .NET architecture with MySQL and Docker."
-      evidence:
-        - "Istpet_Vehiculos"
+  - id: proj-audit-001
+    tags:
+    - pentesting
+    - cybersecurity
+    - docker
+    weight: 5
+    es: Ejecutó una auditoría de seguridad autorizada sobre una aplicación web, con carta de autorización
+      y alcance firmado, laboratorio aislado en contenedores y control documentado de presupuesto y perímetro
+      de pruebas.
+    en: Conducted an authorized security audit of a web application, with signed authorization letter
+      and scope, a containerized isolated lab, and documented control of testing budget and perimeter.
+  - id: proj-audit-002
+    tags:
+    - pentesting
+    - python
+    - testing
+    weight: 4
+    es: Desarrolló una batería de pruebas automatizadas en Python para verificar los límites de alcance,
+      el ciclo de vida de sesión y el handshake WebSocket antes de cada sesión de pruebas.
+    en: Built an automated Python test suite to verify scope boundaries, session lifecycle and WebSocket
+      handshake before each testing session.
+  - id: proj-audit-003
+    tags:
+    - pentesting
+    - cybersecurity
+    weight: 4
+    es: Entregó informe de auditoría con plan de remediación priorizado y revisión independiente de los
+      resultados.
+    en: Delivered an audit report with a prioritized remediation plan and independent review of the findings.

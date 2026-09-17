@@ -4,6 +4,51 @@ Este documento rige la actuación de cualquier agente de Inteligencia Artificial
 
 ---
 
+## 0. Primera respuesta de la sesión (§Saludo)
+
+**Obligatorio.** En la **primera respuesta** de cada sesión —sea cual sea el
+mensaje de Joseph, incluido un simple «hola»— el agente responde con la guía
+de uso de abajo, íntegra y antes de cualquier otra cosa.
+
+Si ese primer mensaje ya contiene una petición concreta, el agente muestra la
+guía y **a continuación** atiende la petición en el mismo turno. No pregunta si
+quiere ver la guía: la muestra.
+
+A partir del segundo mensaje no se repite, salvo que Joseph la pida.
+
+### Guía que debe mostrarse
+
+> **Formato para generar un CV:**
+>
+> ```
+> genera cv | <texto de la oferta o su URL> | idioma: en | plantilla: ats-standard
+> ```
+>
+> - **`idioma`** (`es` | `en`) y **`plantilla`** (`ats-standard` | `ats-compact`)
+>   son **opcionales**. Sin ellos se deducen: oferta en inglés → CV en inglés;
+>   `ats-standard` salvo perfil junior u oferta breve, donde se usa `ats-compact`.
+> - **Pega la oferta literal y completa.** No la resumas ni le quites la parte
+>   de beneficios: las palabras clave se extraen textuales y el CV usa la
+>   variante de la oferta, no la canónica, para coincidir mejor con el ATS.
+> - **Aporta la URL y la fuente** (LinkedIn, Indeed, referido) si las tienes.
+>   No son obligatorias, pero sin ellas el seguimiento pierde la señal que
+>   luego alimenta la analítica.
+>
+> **Otras peticiones habituales:**
+>
+> | Para | Se pide así |
+> |---|---|
+> | Auditar un repositorio | `audita <id de sources.yml>` |
+> | Registrar una respuesta | `<id de la postulación> pasó a <estado>` |
+> | Ver la analítica | `genera la analítica` |
+> | Carta de presentación | `genera carta | <id de la postulación>` |
+>
+> **Recordatorio:** si la coincidencia con la oferta queda por debajo del 60%,
+> el agente reporta los huecos y **pregunta antes de generar**. Nunca inventa
+> experiencia para subir el porcentaje.
+
+---
+
 ## 1. Propósito y rol del agente
 
 El repositorio `portfolio-joe` es la **fuente única de la verdad** sobre la trayectoria profesional de Joseph Andrés Baño Naranjo. En cumplimiento de la decisión **D-01**, el repositorio no contiene código de aplicación para la lógica de negocio; el agente de IA actúa como el motor de ejecución leyendo los datos en `profile/`, las plantillas en `templates/` y ejecutando los procedimientos estandarizados en este contrato.
@@ -70,7 +115,15 @@ Para garantizar que dos generaciones consecutivas con la misma entrada produzcan
    - 1.º Relevancia (`relevancia` descendente).
    - 2.º Peso asignado (`weight` descendente, 5 a 1).
    - 3.º Desempate lexicográfico por identificador (`id` ascendente alfabético).
-3. **Cupos por sección:**
+3. **Ordenación de la sección de proyectos:** el orden **se calcula por oferta**, no es el del archivo.
+   - 1.º Relevancia del proyecto (suma de intersecciones de sus viñetas con las palabras clave), descendente.
+   - 2.º Suma de `weight` de sus viñetas, descendente.
+   - 3.º Desempate lexicográfico por `id` ascendente.
+   - Un proyecto con relevancia 0 **no se incluye**.
+   Así, una vacante frontend antepone el proyecto con más peso frontend y una
+   de arquitectura antepone el suyo, sin reordenar `projects.yml`. El orden del
+   archivo es solo el de almacenamiento y no influye en el resultado.
+4. **Cupos por sección:**
    - En plantilla `ats-standard`: seleccionar entre 4 y 6 viñetas para puestos principales, y entre 2 y 3 viñetas por proyecto relevante.
    - En plantilla `ats-compact`: seleccionar máximo 3 viñetas por puesto y 2 por proyecto.
 
@@ -85,6 +138,30 @@ Para garantizar que dos generaciones consecutivas con la misma entrada produzcan
 ---
 
 ## 6. Variables personales (§Variables, RF-GEN-002)
+
+### Ubicación declarada por oferta (§Ubicación)
+
+`{{secrets.ciudad}}` y `{{secrets.pais}}` son la residencia real de Joseph y
+**nunca se alteran en `.secrets`**. Cuando una oferta es presencial o híbrida en
+otra ciudad donde Joseph puede residir de verdad, la oferta declara:
+
+```yaml
+ubicacion_declarada: "Ambato, Ecuador"
+```
+
+El generador usa ese valor en la cabecera del documento **en lugar de**
+`{{secrets.ciudad}}, {{secrets.pais}}`, sin tocar `.secrets` ni `profile/`.
+
+**Condición inviolable:** solo se declara una ciudad en la que Joseph pueda
+residir realmente —vivienda propia, familiar o mudanza ya decidida—. Declarar
+una ciudad para pasar un filtro geográfico y no poder presentarse es una
+afirmación falsa, y cae bajo la misma prohibición que inventar experiencia
+(RF-GEN-008). Ante la duda, el agente pregunta.
+
+Si el campo no existe, se usa la residencia real. El valor queda registrado en
+`oferta.yml`, de modo que cada documento generado deja constancia de qué ciudad
+declaró y por qué.
+
 
 - Todos los datos de contacto y residencia residen exclusivamente en `privado/.secrets`.
 - Al componer `cv.md`, el agente debe reemplazar cada marcador `{{secrets.<clave>}}` por su valor exacto cargado desde `privado/.secrets`.
@@ -132,7 +209,8 @@ Al auditar o hacer referencia a repositorios con confidencialidad `interno` o `c
 
 - Archivo de registro: `privado/aplicaciones.yml`.
 - **Vocabulario cerrado de estados:**
-  `borrador`, `postulado`, `screening`, `tecnica`, `final`, `oferta`, `aceptada`, `rechazada`, `sin_respuesta`, `retirada`.
+  `borrador`, `postulado`, `screening`, `tecnica`, `final`, `oferta`, `aceptada`, `rechazada`, `sin_respuesta`, `retirada`, `descartada`.
+- **`descartada` (PD-10):** Joseph evalúa la oferta y decide **no** postular. Es un estado terminal que nunca pasó por `postulado`, así que queda **fuera del embudo de conversión** de la analítica: contarla como pérdida falsearía la tasa de respuesta. Se analiza aparte, para responder qué tipo de ofertas se descartan y por qué.
 - **Regla de inmutabilidad del `timeline`:** Las transiciones de estado solo se registran anexando un nuevo objeto `{ fecha: "AAAA-MM-DD", evento: "..." }`. Queda prohibido modificar, sobrescribir o eliminar eventos anteriores.
 - **Umbral de inactividad (PD-01):** Toda postulación en estado `postulado`, `screening` o `tecnica` que supere **21 días calendario** sin comunicación ni eventos nuevos debe transicionar automáticamente al estado `sin_respuesta`.
 

@@ -1,11 +1,18 @@
-# profile/education.yml — Formación académica (PD-04)
-# Regla: Universidad Politécnica Salesiana como estudios cursados sin titulación,
-# en pausa, sin afirmar título ni fecha de graduación.
+# profile/education.yml — Formación académica (RF-DATOS-001, PD-04)
+# Vocabulario cerrado de status: graduado | cursado_sin_titulacion | en_curso
+# Orden: formación en curso primero; es la actual y la que completa una credencial.
 
-- institution: "Universidad Politécnica Salesiana"
+- institution: Instituto Superior Tecnológico Mayor Pedro Traversari
   degree:
-    es: "Estudios cursados en Ingeniería en Ciencias de la Computación"
-    en: "Coursework in Computer Science Engineering"
-  status: "cursado_sin_titulacion"
-  start_year: 2021
+    es: Tecnología Superior en Desarrollo de Software
+    en: Higher Technical Degree in Software Development
+  status: en_curso
+  start_year: 2026
   end_year: null
+- institution: Universidad Politécnica Salesiana
+  degree:
+    es: Estudios cursados en Ingeniería en Ciencias de la Computación
+    en: Coursework in Computer Science Engineering
+  status: cursado_sin_titulacion
+  start_year: 2021
+  end_year: 2024
