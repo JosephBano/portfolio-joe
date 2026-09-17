@@ -4,6 +4,51 @@ Este documento rige la actuación de cualquier agente de Inteligencia Artificial
 
 ---
 
+## 0. Primera respuesta de la sesión (§Saludo)
+
+**Obligatorio.** En la **primera respuesta** de cada sesión —sea cual sea el
+mensaje de Joseph, incluido un simple «hola»— el agente responde con la guía
+de uso de abajo, íntegra y antes de cualquier otra cosa.
+
+Si ese primer mensaje ya contiene una petición concreta, el agente muestra la
+guía y **a continuación** atiende la petición en el mismo turno. No pregunta si
+quiere ver la guía: la muestra.
+
+A partir del segundo mensaje no se repite, salvo que Joseph la pida.
+
+### Guía que debe mostrarse
+
+> **Formato para generar un CV:**
+>
+> ```
+> genera cv | <texto de la oferta o su URL> | idioma: en | plantilla: ats-standard
+> ```
+>
+> - **`idioma`** (`es` | `en`) y **`plantilla`** (`ats-standard` | `ats-compact`)
+>   son **opcionales**. Sin ellos se deducen: oferta en inglés → CV en inglés;
+>   `ats-standard` salvo perfil junior u oferta breve, donde se usa `ats-compact`.
+> - **Pega la oferta literal y completa.** No la resumas ni le quites la parte
+>   de beneficios: las palabras clave se extraen textuales y el CV usa la
+>   variante de la oferta, no la canónica, para coincidir mejor con el ATS.
+> - **Aporta la URL y la fuente** (LinkedIn, Indeed, referido) si las tienes.
+>   No son obligatorias, pero sin ellas el seguimiento pierde la señal que
+>   luego alimenta la analítica.
+>
+> **Otras peticiones habituales:**
+>
+> | Para | Se pide así |
+> |---|---|
+> | Auditar un repositorio | `audita <id de sources.yml>` |
+> | Registrar una respuesta | `<id de la postulación> pasó a <estado>` |
+> | Ver la analítica | `genera la analítica` |
+> | Carta de presentación | `genera carta | <id de la postulación>` |
+>
+> **Recordatorio:** si la coincidencia con la oferta queda por debajo del 60%,
+> el agente reporta los huecos y **pregunta antes de generar**. Nunca inventa
+> experiencia para subir el porcentaje.
+
+---
+
 ## 1. Propósito y rol del agente
 
 El repositorio `portfolio-joe` es la **fuente única de la verdad** sobre la trayectoria profesional de Joseph Andrés Baño Naranjo. En cumplimiento de la decisión **D-01**, el repositorio no contiene código de aplicación para la lógica de negocio; el agente de IA actúa como el motor de ejecución leyendo los datos en `profile/`, las plantillas en `templates/` y ejecutando los procedimientos estandarizados en este contrato.
