@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# .githooks/pre-commit — Guarda de seguridad local (RF-SEG-002, RF-SEG-003, ADR-003)
+# Aborta el commit si se detectan rutas privadas o datos sensibles en el índice.
+
+set -e
+
+PATTERNS_FILE=".security/patterns.txt"
+
+# 1. Inspeccionar todas las rutas preparadas en el índice
+while IFS= read -r -d '' file; do
+  [ -z "$file" ] && continue
+
+  # Comprobar si la ruta pertenece a privado/ o variantes de .secrets
+  if [[ "$file" =~ ^privado/ ]] || [[ "$file" == ".secrets" ]] || ([[ "$file" =~ ^\.secrets\. ]] && [[ "$file" != ".secrets.example" ]]); then
+    echo "ERROR [RF-SEG-002]: Intento de confirmar ruta protegida: '$file'." >&2
+    echo "Los archivos bajo 'privado/' y variantes de '.secrets' tienen prohibido el control de versiones." >&2
+    exit 1
+  fi
+
+  # Omitir el propio archivo de patrones de la inspección de contenido
+  if [ "$file" = ".security/patterns.txt" ]; then
+    continue
+  fi
+
+  # 2. Inspeccionar el contenido añadido en busca de patrones sensibles
+  if [ -f "$PATTERNS_FILE" ]; then
+    # Extraer líneas añadidas (+) omitiendo cabeceras de diff
+    added_lines=$(git diff --cached -U0 -- "$file" 2>/dev/null | grep '^[+]' | grep -v '^[+][+][+]' | sed 's/^[+]//' || true)
+
+    if [ -n "$added_lines" ]; then
+      matches=$(echo "$added_lines" | grep -E -f "$PATTERNS_FILE" || true)
+      if [ -n "$matches" ]; then
+        echo "ERROR [RF-SEG-003]: Se detectaron datos sensibles o credenciales en '$file':" >&2
+        echo "$matches" | head -n 5 | sed 's/^/  > /' >&2
+        echo "El commit ha sido abortado. Utiliza referencias {{secrets.<clave>}} o añade excepciones en .security/patterns.txt." >&2
+        exit 1
+      fi
+    fi
+  fi
+done < <(git diff --cached --name-only -z)
+
+exit 0
